@@ -1,9 +1,9 @@
 .SILENT:
 
-NAME		= 		phone
-NAME_T		=		phone_unit
-SRCS		=		phone.cpp
-SRCS_T		=		phone.cpp
+NAME		= 		phonebook
+NAME_T		=		phonebook_unit
+SRCS		=		PhoneBook.cpp Contact.cpp main.cpp
+SRCS_T		=		PhoneBook.cpp Contact.cpp main.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
 OBJS_T		=		$(SRCS_T:.cpp=.o)
 FLAGS		=		-Wall -Wextra -Werror -std=c++98
