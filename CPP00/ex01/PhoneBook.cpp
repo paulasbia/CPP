@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 15:45:51 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 15:48:26 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void    PhoneBook::search(void)
         std::cout << std::setw(10) << std::right << i << " | ";
         std::cout << std::setw(10) << std::right << m_contact[i].get_fname() << " | ";
         std::cout << std::setw(10) << std::right << m_contact[i].get_lname() << " | ";
-        std::cout << std::setw(10) << std::right << m_contact[i].get_nickname();
+        std::cout << std::setw(10) << std::right << m_contact[i].get_nickname() << std::endl;
         i++;
     }
     std::cout << std::endl;
