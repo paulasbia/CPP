@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:40:56 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 15:39:01 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 15:52:44 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Contact
     std::string get_dark();
     //Methods
     //void    print_sumary() const;
-    //void    print_details() const;
+    void    print_details() const;
 
     private:
         std::string m_first_name;

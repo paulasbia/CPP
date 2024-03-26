@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 15:48:26 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 16:01:43 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,12 @@ void    PhoneBook::search(void)
         std::cout << std::setw(10) << std::right << m_contact[i].get_nickname() << std::endl;
         i++;
     }
-    std::cout << std::endl;
+    std::cout << "Type the index of the contact you want see: " << std::endl;
+    std::cout << "> ";
+    int input = 0;
+    std::cin >> input;
+    if (std::cin.fail() || input > 7 || input < 0)
+        std::cout << "invalid input, try again\n";
+    else
+        m_contact[input].print_details();
 }
