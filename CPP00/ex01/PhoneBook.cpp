@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 20:37:16 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 20:55:55 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,10 @@ void    PhoneBook::add()
     std::string phone;
     std::string dark;
 
+    std::cout << "First name: ";
     while (f_name.empty() && !std::cin.eof())
     {
-        std::cout << "First name: ";
+        // std::cout << "First name: ";
         std::getline(std::cin, f_name);
     }
     while (l_name.empty() && !std::cin.eof())
