@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 20:11:42 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 20:37:16 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,22 @@ void    PhoneBook::add()
     std::string phone;
     std::string dark;
 
-    std::cout << "First name: ";
-    while (f_name.empty())
+    while (f_name.empty() && !std::cin.eof())
+    {
+        std::cout << "First name: ";
         std::getline(std::cin, f_name);
-    std::cout << "Last name: ";
-    while (l_name.empty())
+    }
+    while (l_name.empty() && !std::cin.eof())
+    {
+         std::cout << "Last name: ";
         std::getline(std::cin, l_name);
-    std::cout << "Nickname: ";
-    while (nick.empty())
-        std::getline(std::cin, nick);;
-    while (phone.empty()) // precisa tratar para so aceitar numero
+    }
+    while (nick.empty() && !std::cin.eof())
+    {
+        std::cout << "Nickname: ";
+        std::getline(std::cin, nick);
+    }
+    while (phone.empty() && !std::cin.eof()) // precisa tratar para so aceitar numero
     {
         while(1)
         {
@@ -77,9 +83,11 @@ void    PhoneBook::add()
                 break;
         }
     }
-    std::cout << "Darkest secret: ";
-    while (dark.empty())
+    while (dark.empty() && !std::cin.eof())
+    {
+        std::cout << "Darkest secret: ";
         std::getline(std::cin, dark);
+    }
     Contact contact(f_name, l_name, nick, phone, dark);
     this->m_contact[m_index % 8] = contact;
     m_index++;
@@ -108,15 +116,18 @@ void    PhoneBook::search(void)
         std::cout << std::setw(10) << std::right << trunc(m_contact[i].get_nickname()) << std::endl;
         i++;
     }
-    std::cout << "Type the index of the contact you want see: " << std::endl;
-    std::cout << "> ";
-    int input = 0;
-    std::cin >> input;
-    if (std::cin.fail() || input > 7 || input < 0 || input > m_index - 1)
+    while(!std::cin.eof())
     {
-        std::cin.clear();
-        std::cout << "Sorry, we don't have this contact on our PhoneBook.\n";
-        return;
+        std::cout << "Type the index of the contact you want see: " << std::endl;
+        std::cout << "> ";
+        int input = 0;
+        std::cin >> input;
+        if (std::cin.fail() || input > 7 || input < 0 || input > m_index - 1)
+        {
+            std::cin.clear();
+            std::cout << "Sorry, we don't have this contact on our PhoneBook.\n";
+            break;
+        }
+        m_contact[input].print_details();
     }
-    m_contact[input].print_details();
 }

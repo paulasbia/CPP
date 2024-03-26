@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:20:20 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 19:45:36 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 20:39:18 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void    prompt_choice(std::string &choice)
     std::cout << "Please, select one of this options: ADD, SEARCH or EXIT: " << '\n';
     std::cout << "> ";
     std::cin >> choice;
-    while (!is_valid(choice))
+    while (!is_valid(choice) && !std::cin.eof())
     {
         std::cout << "Invalis input, please try again. Select ne of this options: ADD, SEARCH or EXIT:\n";
         std::cout << "> ";
@@ -62,6 +62,11 @@ int main(void)
             phone_book.search();
         if(choice == "EXIT")
             break;
+        if (std::cin.eof())
+		{
+			std::cout << std::endl;
+            break;
+		}
     }
     std::cout << "See you soon!\n";
 }
