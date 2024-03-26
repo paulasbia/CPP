@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:20:20 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 15:02:24 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 16:10:10 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void    prompt_choice(std::string &choice)
     {
         std::cout << "> ";
         std::cin >> choice;
+        std::cout << "Invalis input, please try again.\n";
     }
 }
 
@@ -57,5 +58,8 @@ int main(void)
             phone_book.add();
         if(choice == "SEARCH")
             phone_book.search();
+        if(choice == "EXIT")
+            break;
     }
+    std::cout << "See you soon!\n";
 }
