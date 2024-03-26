@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:38:06 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 15:24:21 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 20:14:02 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,8 @@ private:
     Contact m_contact[8];
     int     m_index;
 };
+
+int isnotnbr(std::string &str);
+std::string trunc(std::string data);
 
 #endif

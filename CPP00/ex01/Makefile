@@ -2,8 +2,8 @@
 
 NAME		= 		phonebook
 NAME_T		=		phonebook_unit
-SRCS		=		PhoneBook.cpp Contact.cpp main.cpp
-SRCS_T		=		PhoneBook.cpp Contact.cpp main.cpp
+SRCS		=		PhoneBook.cpp Contact.cpp main.cpp utils.cpp
+SRCS_T		=		PhoneBook.cpp Contact.cpp main.cpp utils.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
 OBJS_T		=		$(SRCS_T:.cpp=.o)
 CXXFLAGS		=		-Wall -Wextra -Werror -std=c++98

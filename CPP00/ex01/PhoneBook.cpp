@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 16:42:18 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 20:11:42 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,27 @@ PhoneBook::~PhoneBook()
 {
 }
 
-int isnotnbr(std::string &str)
-{
-    int i = 0;
-    while(str[i])
-    {
-        if(!isdigit(str[i]))
-            return 1;
-        i++;
-    }
-    return 0;
-}
+// int isnotnbr(std::string &str)
+// {
+//     int i = 0;
+//     while(str[i])
+//     {
+//         if(!isdigit(str[i]))
+//             return 1;
+//         i++;
+//     }
+//     return 0;
+// }
+
+// std::string trunc(std::string data)
+// {
+//     if(data.size() > 10)
+//     {
+//         data = data.substr(0, 9);
+//         data.push_back('.');
+//     }
+//     return data;
+// }
 
 int PhoneBook::getsize()
 {
@@ -93,17 +103,20 @@ void    PhoneBook::search(void)
     while (i < size)
     {
         std::cout << std::setw(10) << std::right << i << " | ";
-        std::cout << std::setw(10) << std::right << m_contact[i].get_fname() << " | ";
-        std::cout << std::setw(10) << std::right << m_contact[i].get_lname() << " | ";
-        std::cout << std::setw(10) << std::right << m_contact[i].get_nickname() << std::endl;
+        std::cout << std::setw(10) << std::right << trunc(m_contact[i].get_fname()) << " | ";
+        std::cout << std::setw(10) << std::right << trunc(m_contact[i].get_lname()) << " | ";
+        std::cout << std::setw(10) << std::right << trunc(m_contact[i].get_nickname()) << std::endl;
         i++;
     }
-    std::cout << "Type the index of the contact you want see: " << std::endl; //VERIFICAR INDEX INVALIDOclear
+    std::cout << "Type the index of the contact you want see: " << std::endl;
     std::cout << "> ";
     int input = 0;
     std::cin >> input;
-    if (std::cin.fail() || input > 7 || input < 0)
-        std::cout << "invalid input, try again...........\n";
-    else
-        m_contact[input].print_details();
+    if (std::cin.fail() || input > 7 || input < 0 || input > m_index - 1)
+    {
+        std::cin.clear();
+        std::cout << "Sorry, we don't have this contact on our PhoneBook.\n";
+        return;
+    }
+    m_contact[input].print_details();
 }
