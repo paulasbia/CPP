@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:20:20 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 13:06:19 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 13:46:35 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void    prompt_choice(std::string &choice)
 int main(void)
 {
     PhoneBook phone_book;
-    std::string choice{};
+    std::string choice;
     
     welcome();
     while (1)

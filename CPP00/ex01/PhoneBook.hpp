@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:38:06 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 13:10:59 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 13:40:13 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 
 private:
     Contact m_contact[8];
-    int     m_index{};
+    int     m_index;
 };
 
 #endif
