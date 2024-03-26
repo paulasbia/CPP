@@ -6,13 +6,17 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:06:47 by paula             #+#    #+#             */
-/*   Updated: 2024/03/25 20:19:26 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 12:57:55 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::~Contact()
+{
+}
+
+Contact::Contact()
 {
 }
 

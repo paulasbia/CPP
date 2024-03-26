@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:20:20 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 10:04:53 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 12:56:57 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int main(void)
     {
         choice.clear();
         prompt_choice(choice);
-        std::cout << choice << '\n';
+        if(choice == "ADD")
+            phone_book.add();
     }
 }
