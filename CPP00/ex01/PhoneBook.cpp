@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 15:12:04 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 15:45:51 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,13 @@ int isnotnbr(std::string &str)
     return 0;
 }
 
+int PhoneBook::getsize()
+{
+    return(m_index > 7 ? 8 : m_index);
+}
+
 void    PhoneBook::add()
 {
-    std::cout << "vai add alguem...\n";
     std::string f_name;
     std::string l_name;
     std::string nick;
@@ -73,5 +77,21 @@ void    PhoneBook::add()
 
 void    PhoneBook::search(void)
 {
+    std::cout << "---------------- PHONBOOK CONTACTS ----------------" << std::endl;
+    std::cout << std::setw(10) << std::right << "Index" << " | "
+        << std::setw(10) << std::right << "First Name" << " | "
+        << std::setw(10) << std::right << "Last Name" << " | "
+        << std::setw(10) << std::right << "Nickname" << std::endl;
     
+    int size = getsize();
+    int i = 0;
+    while (i < size)
+    {
+        std::cout << std::setw(10) << std::right << i << " | ";
+        std::cout << std::setw(10) << std::right << m_contact[i].get_fname() << " | ";
+        std::cout << std::setw(10) << std::right << m_contact[i].get_lname() << " | ";
+        std::cout << std::setw(10) << std::right << m_contact[i].get_nickname();
+        i++;
+    }
+    std::cout << std::endl;
 }

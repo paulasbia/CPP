@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:40:56 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 13:00:31 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 15:39:01 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <cstring>
+#include <cctype> 
+#include <iomanip> 
 
 class Contact
 {
@@ -25,6 +27,12 @@ class Contact
     //destructor
         ~Contact();
 
+    //Getter
+    std::string get_fname();
+    std::string get_lname();
+    std::string get_nickname();
+    std::string get_phone();
+    std::string get_dark();
     //Methods
     //void    print_sumary() const;
     //void    print_details() const;

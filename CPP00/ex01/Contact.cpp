@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:06:47 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 12:57:55 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 15:41:25 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,31 @@ Contact::~Contact()
 
 Contact::Contact()
 {
+}
+
+std::string Contact::get_fname()
+{
+    return (m_first_name);
+}
+
+std::string Contact::get_lname()
+{
+    return(m_last_name);
+}
+
+std::string Contact::get_nickname()
+{
+    return (m_nickname);
+}
+
+std::string Contact::get_phone()
+{
+    return (m_phone_number);
+}
+
+std::string Contact::get_dark()
+{
+    return (m_darkest_secret);
 }
 
 Contact::Contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
