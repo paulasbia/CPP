@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:20:20 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 16:10:10 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 16:28:59 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,13 @@ int    is_valid(std::string &choice)
 void    prompt_choice(std::string &choice)
 {
     std::cout << "Please, select one of this options: ADD, SEARCH or EXIT: " << '\n';
+    std::cout << "> ";
+    std::cin >> choice;
     while (!is_valid(choice))
     {
+        std::cout << "Invalis input, please try again. TESTE\n";
         std::cout << "> ";
         std::cin >> choice;
-        std::cout << "Invalis input, please try again.\n";
     }
 }
 
