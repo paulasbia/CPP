@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:20:20 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 13:46:35 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/26 15:02:24 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ int main(void)
         prompt_choice(choice);
         if(choice == "ADD")
             phone_book.add();
+        if(choice == "SEARCH")
+            phone_book.search();
     }
 }
