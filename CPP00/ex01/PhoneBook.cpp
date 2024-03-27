@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 20:55:55 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/27 07:23:58 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,6 @@ void    PhoneBook::search(void)
             break;
         }
         m_contact[input].print_details();
+        return;
     }
 }
