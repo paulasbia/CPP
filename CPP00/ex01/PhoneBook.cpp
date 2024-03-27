@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/27 18:59:08 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/27 22:27:08 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,11 +95,16 @@ void    PhoneBook::search(void)
     }
     while(!std::cin.eof())
     {
-        std::cout << "Type the index of the contact you want see: " << std::endl;
+        std::cout << "Type the index of the contact you want see: " << '\n';
         std::cout << "> ";
         int input = 0;
-        std::cin >> input;
-        if (std::cin.fail() || input > 7 || input < 0 || input > m_index - 1)
+        std::string inp;
+        std::cin.ignore(1000, '\n');
+        getline(std::cin, inp);
+        std::stringstream ss;
+        ss << inp;
+        ss >> input;
+        if (ss.fail() || input > 7 || input < 0 || input > m_index - 1)
         {
             std::cin.clear();
             std::cout << "Sorry, we don't have this contact on our PhoneBook.\n";
