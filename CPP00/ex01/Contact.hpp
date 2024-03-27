@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:40:56 by paula             #+#    #+#             */
-/*   Updated: 2024/03/26 15:52:44 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/27 17:37:36 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <cstring>
 #include <cctype> 
 #include <iomanip> 
+#include <algorithm>
+#include <string>
 
 class Contact
 {

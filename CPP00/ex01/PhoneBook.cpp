@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/27 07:23:58 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/27 18:59:08 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,6 @@ PhoneBook::PhoneBook()
 PhoneBook::~PhoneBook()
 {
 }
-
-// int isnotnbr(std::string &str)
-// {
-//     int i = 0;
-//     while(str[i])
-//     {
-//         if(!isdigit(str[i]))
-//             return 1;
-//         i++;
-//     }
-//     return 0;
-// }
-
-// std::string trunc(std::string data)
-// {
-//     if(data.size() > 10)
-//     {
-//         data = data.substr(0, 9);
-//         data.push_back('.');
-//     }
-//     return data;
-// }
 
 int PhoneBook::getsize()
 {
@@ -58,26 +36,23 @@ void    PhoneBook::add()
 
     std::cout << "First name: ";
     while (f_name.empty() && !std::cin.eof())
-    {
-        // std::cout << "First name: ";
-        std::getline(std::cin, f_name);
-    }
+        std::getline(std::cin >> std::ws, f_name);
     while (l_name.empty() && !std::cin.eof())
     {
-         std::cout << "Last name: ";
-        std::getline(std::cin, l_name);
+        std::cout << "Last name: ";
+        std::getline(std::cin >> std::ws,  l_name);
     }
     while (nick.empty() && !std::cin.eof())
     {
         std::cout << "Nickname: ";
-        std::getline(std::cin, nick);
+        std::getline(std::cin >> std::ws, nick);
     }
-    while (phone.empty() && !std::cin.eof()) // precisa tratar para so aceitar numero
+    while (phone.empty() && !std::cin.eof())
     {
         while(1)
         {
             std::cout << "Phone number: ";
-            std::getline(std::cin, phone);
+            std::getline(std::cin >> std::ws, phone);
             if(isnotnbr(phone))
                 std::cout << "invalid input, try again\n";
             else
@@ -87,7 +62,8 @@ void    PhoneBook::add()
     while (dark.empty() && !std::cin.eof())
     {
         std::cout << "Darkest secret: ";
-        std::getline(std::cin, dark);
+        std::getline(std::cin >> std::ws, dark);
+        f_name.erase(std::remove_if(f_name.begin(), f_name.end(), ::isblank), f_name.end());  
     }
     Contact contact(f_name, l_name, nick, phone, dark);
     this->m_contact[m_index % 8] = contact;
