@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/28 08:51:39 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/28 09:25:59 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,7 @@ void    PhoneBook::search(void)
         std::cout << "> ";
         int input = 0;
         std::string inp;
-        std::cin.ignore(1000, '\n');
-        getline(std::cin, inp);
+        getline(std::cin >> std::ws, inp);
         std::stringstream ss;
         ss << inp;
         ss >> input;
