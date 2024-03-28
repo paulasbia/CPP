@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:20:20 by paula             #+#    #+#             */
-/*   Updated: 2024/03/27 07:24:46 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/28 09:14:24 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void    prompt_choice(std::string &choice)
     std::cin >> choice;
     while (!is_valid(choice) && !std::cin.eof())
     {
-       // std::cout << "Invalis input, please try again. Select ne of this options: ADD, SEARCH or EXIT:\n";
         std::cout << "> ";
         std::cin >> choice;
     }
