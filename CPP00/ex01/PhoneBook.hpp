@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:38:06 by paula             #+#    #+#             */
-/*   Updated: 2024/03/27 22:21:28 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/28 08:50:26 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
     //Methods
     void    add();
     void    search();
+    void    print_sumary();
     int     getsize();
 
 private:

@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/27 22:27:08 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/28 08:51:39 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,8 @@ void    PhoneBook::add()
     m_index++;
 }
 
-void    PhoneBook::search(void)
+void    PhoneBook::print_sumary()
 {
-    if (m_index == 0)
-    {
-        std::cout << "No contacts added yet...\n";
-        return;
-    }
     std::cout << "---------------- PHONBOOK CONTACTS ----------------" << std::endl;
     std::cout << std::setw(10) << std::right << "Index" << " | "
         << std::setw(10) << std::right << "First Name" << " | "
@@ -93,6 +88,16 @@ void    PhoneBook::search(void)
         std::cout << std::setw(10) << std::right << trunc(m_contact[i].get_nickname()) << std::endl;
         i++;
     }
+}
+
+void    PhoneBook::search(void)
+{
+    if (m_index == 0)
+    {
+        std::cout << "No contacts added yet...\n";
+        return;
+    }
+    print_sumary();
     while(!std::cin.eof())
     {
         std::cout << "Type the index of the contact you want see: " << '\n';
