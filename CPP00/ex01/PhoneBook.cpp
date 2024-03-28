@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/28 09:25:59 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/28 09:32:45 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,6 @@ void    PhoneBook::search(void)
         ss >> input;
         if (ss.fail() || input > 7 || input < 0 || input > m_index - 1)
         {
-            std::cin.clear();
             std::cout << "Sorry, we don't have this contact on our PhoneBook.\n";
             break;
         }
