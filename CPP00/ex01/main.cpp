@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 20:20:20 by paula             #+#    #+#             */
-/*   Updated: 2024/03/28 09:26:19 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/28 09:34:18 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,10 @@ void    prompt_choice(std::string &choice)
 {
     std::cout << "Please, select one of this options: ADD, SEARCH or EXIT: \n";
     std::cout << "> ";
-  //  std::cin.clear();
     getline(std::cin >> std::ws, choice);
     while (!is_valid(choice) && !std::cin.eof())
     {
         std::cout << "> ";
-     //   std::cin.clear();
         getline(std::cin >> std::ws, choice);
     }
 }
@@ -69,5 +67,4 @@ int main(void)
             break;
 		}
     }
-    std::cout << "See you soon!\n";
 }

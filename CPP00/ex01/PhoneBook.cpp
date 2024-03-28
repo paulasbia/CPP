@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/28 09:32:45 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/28 09:34:41 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ PhoneBook::PhoneBook()
 
 PhoneBook::~PhoneBook()
 {
+    std::cout << "See you soon!\n";
 }
 
 int PhoneBook::getsize()
