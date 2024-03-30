@@ -2,7 +2,7 @@
 
 NAME		= 		account
 NAME_T		=		account_test
-SRCS		=		Acount.cpp tests.cpp
+SRCS		=		Account.cpp tests.cpp
 SRCS_T		=		Account.cpp tests.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
 OBJS_T		=		$(SRCS_T:.cpp=.o)
