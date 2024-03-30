@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 11:51:31 by paula             #+#    #+#             */
-/*   Updated: 2024/03/30 14:31:35 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/30 14:38:27 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,12 @@ int		Account::checkAmount( void ) const
 
 void	Account::displayStatus( void ) const
 {
-    
+    _displayTimestamp();
+    std::cout << " index:" << _accountIndex
+        << ";amount:" << _amount 
+        << ";deposits:" << _nbDeposits
+        << ";withdrawls:" << _nbWithdrawals
+        << std::endl;
 }
 
 // Visit http://en.cppreference.com/w/cpp/chrono/c/strftime
