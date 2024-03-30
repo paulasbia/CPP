@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 11:51:31 by paula             #+#    #+#             */
-/*   Updated: 2024/03/30 14:58:55 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/30 15:16:56 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,27 +77,39 @@ void	Account::makeDeposit( int deposit )
     std::cout << " index:" << _accountIndex
             << ";p_amount:" << _amount 
             << ";deposits:" << deposit
-            << ";amout:" << _amount + deposit
+            << ";amount:" << _amount + deposit
             << ";nb_deposits:" << _nbDeposits
             << std::endl;
+    _amount += deposit;
     _totalNbDeposits++;
     _totalAmount += deposit;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
-    if (withdrawal > _totalAmount)
-        return false;
-    else
+    _displayTimestamp();
+    std::cout << " index:" << _accountIndex
+        << ";p_amount:" << _amount
+        << ";withdrawal:" << std::flush;
+    if (withdrawal > checkAmount())
     {
-        _totalAmount -= withdrawal;
-        return true;
+        std::cout << "refused" << std::endl;
+        return false;
     }
+    std::cout << withdrawal << std::flush;
+    _nbWithdrawals++;
+    std::cout << ";amout:" << _amount - withdrawal
+            << ";nb_withdrawal:" << _nbWithdrawals
+            << std::endl;
+    _amount -= withdrawal;
+    _totalAmount -=withdrawal;
+    _totalNbWithdrawals++;
+    return true;
 }
 
 int		Account::checkAmount( void ) const
 {
-    return 0;
+    return _amount;
 }
 
 void	Account::displayStatus( void ) const
