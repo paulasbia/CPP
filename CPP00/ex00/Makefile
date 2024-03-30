@@ -6,7 +6,7 @@ SRCS		=		megaphone.cpp
 SRCS_T		=		megaphone.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
 OBJS_T		=		$(SRCS_T:.cpp=.o)
-FLAGS		=		-Wall -Wextra -Werror -std=c++98
+CXXFLAGS		=		-Wall -Wextra -Werror -std=c++98
 RM			=		rm -f
 
 COLOUR_GREEN=\033[32m
@@ -15,18 +15,17 @@ COLOUR_END=\033[0m
 COLOUR_MAG=\001\e[0;35m\002
 
 objs/%.o: */%.cpp
-					@c++ $(FLAGS) -c $< -o $@
+					@c++ $(CXXFLAGS) -c $< -o $@
 
 ${NAME}: ${OBJS}
-	@c++ $(FLAGS) $(OBJS) -o $(NAME)
+	@c++ $(CXXFLAGS) $(OBJS) -o $(NAME)
 	@echo "$(COLOUR_MAG)\nNice! Megaphone Compiled! $(COLOUR_GREEN)ᕦ$(COLOUR_RED)♥$(COLOUR_GREEN)_$(COLOUR_RED)♥$(COLOUR_GREEN)ᕤ\n$(COLOUR_END)"
 
 all: ${NAME}
 
 ${NAME_T}: ${OBJS_T}
-	@c++ $(FLAGS)  $(OBJS_T) -o $(NAME_T)
+	@c++ $(CXXFLAGS)  $(OBJS_T) -o $(NAME_T)
 	@echo "$(COLOUR_MAG)\nNice! Megaphone Compiled! $(COLOUR_GREEN)ᕦ$(COLOUR_RED)♥$(COLOUR_GREEN)_$(COLOUR_RED)♥$(COLOUR_GREEN)ᕤ\n$(COLOUR_END)"
-	@echo "$(COLOUR_MAG)\nTo start the program type ./minishell\nENJOY!\n$(COLOUR_END)"
 
 unit: ${NAME_T}
 	./${NAME_T}
