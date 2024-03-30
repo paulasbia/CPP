@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 11:51:31 by paula             #+#    #+#             */
-/*   Updated: 2024/03/30 14:03:41 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/30 14:31:35 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,12 @@ Account::Account( void )
 Account::Account( int initial_deposit )
 {
     _displayTimestamp();
-    _totalAmount = initial_deposit;
-    std::cout << " index:" << _nbAccounts << ";amout:" << initial_deposit << ";created" << std::endl;
+    _amount = initial_deposit;
+    _totalAmount += _amount;
+    _accountIndex = _nbAccounts;
+    std::cout << " index:" << _accountIndex 
+            << ";amount:" << _amount 
+            << ";created" << std::endl;
     _nbAccounts += 1;
 }
 
@@ -58,13 +62,17 @@ int	Account::getNbWithdrawals( void )
 
 void	Account::displayAccountsInfos( void )
 {
-       // _displayTimestamp();
+    _displayTimestamp();
+    std::cout << " accounts:" << getNbAccounts() 
+            << ";total:" << getTotalAmount() 
+            << ";deposits:" << getNbDeposits() 
+            << ";withdrawls:" << getNbWithdrawals() 
+            << std::endl;
 }
 
 void	Account::makeDeposit( int deposit )
 {
-        _totalNbDeposits += 1;
-        _totalAmount += deposit;
+        (void)deposit;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
