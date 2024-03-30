@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 11:51:31 by paula             #+#    #+#             */
-/*   Updated: 2024/03/30 13:51:51 by paula            ###   ########.fr       */
+/*   Updated: 2024/03/30 13:56:37 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Account::Account( int initial_deposit )
 {
     _displayTimestamp();
     _totalAmount = initial_deposit;
+    std::cout << " index:" << _nbAccounts << ";amout:" << initial_deposit << ";created" << std::endl;
     
 }
 
@@ -57,7 +58,7 @@ int	Account::getNbWithdrawals( void )
 
 void	Account::displayAccountsInfos( void )
 {
-        _displayTimestamp();
+       // _displayTimestamp();
 }
 
 void	Account::makeDeposit( int deposit )
