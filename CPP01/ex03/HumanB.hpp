@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:28:02 by paula             #+#    #+#             */
-/*   Updated: 2024/04/01 16:50:30 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/01 16:57:19 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class HumanB
         ~HumanB( void );
     
     //Methods
-    void    attack();
+    void    attack( void );
     
     private:
-        std::string m_weapon;
+        std::string *m_weapon;
         std::string m_name;
 };

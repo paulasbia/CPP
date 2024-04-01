@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 13:12:08 by paula             #+#    #+#             */
-/*   Updated: 2024/04/01 16:51:28 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/01 17:00:45 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main()
 {
-    std::cout << "teste\n";
+    HumanB  josh = HumanB("Josh");
+    josh.attack();
     return 0;
 }
