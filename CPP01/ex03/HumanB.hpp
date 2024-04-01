@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:28:02 by paula             #+#    #+#             */
-/*   Updated: 2024/04/01 16:04:01 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/01 16:31:58 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 class HumanB
 {
     public:
-        HumanB(/* args */);
-        ~HumanB();
+        HumanB(std::string name);
+        HumanB( void );
+        ~HumanB( void );
     
     //Methods
     void    attack();
