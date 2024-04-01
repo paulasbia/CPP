@@ -6,18 +6,14 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:38:06 by paula             #+#    #+#             */
-/*   Updated: 2024/03/28 08:50:26 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/01 09:56:21 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <iostream>
 #include <sstream>
-#include <cstring>
-#include <string_view>
-#include <limits>
 #include "Contact.hpp"
 
 class PhoneBook

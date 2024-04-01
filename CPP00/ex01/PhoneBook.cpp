@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:37:58 by paula             #+#    #+#             */
-/*   Updated: 2024/03/28 09:34:41 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/01 10:08:56 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void    PhoneBook::add()
     {
         std::cout << "Darkest secret: ";
         std::getline(std::cin >> std::ws, dark);
-        f_name.erase(std::remove_if(f_name.begin(), f_name.end(), ::isblank), f_name.end());  
+       f_name.erase(std::remove_if(f_name.begin(), f_name.end(), ::isblank), f_name.end());  
     }
     Contact contact(f_name, l_name, nick, phone, dark);
     this->m_contact[m_index % 8] = contact;
