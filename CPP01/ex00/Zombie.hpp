@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 13:12:08 by paula             #+#    #+#             */
-/*   Updated: 2024/04/01 14:24:20 by paula            ###   ########.fr       */
+/*   Created: 2024/04/01 13:00:27 by paula             #+#    #+#             */
+/*   Updated: 2024/04/01 14:22:48 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-int main()
+#include <iostream>
+//#include <string_view>
+
+class Zombie
 {
-    Zombie  *zombie = newZombie("Marceline");
+    public:
     
-    zombie->announce();
-    delete  zombie;
-    randomChump("Simon");
-    return 0;
-}
+        //Constructor
+        Zombie(std::string name);
+        
+        //Destructor
+        ~Zombie();
+
+        //Methods
+        void    announce( void );
+
+    private:
+        std::string m_name;
+    
+};
+
+Zombie  *newZombie(std::string name);
+void    randomChump( std::string name );
+
+#endif
