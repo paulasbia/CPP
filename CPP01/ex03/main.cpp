@@ -6,13 +6,16 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 13:12:08 by paula             #+#    #+#             */
-/*   Updated: 2024/04/01 15:26:11 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/01 16:51:28 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
 int main()
 {
+    std::cout << "teste\n";
     return 0;
 }

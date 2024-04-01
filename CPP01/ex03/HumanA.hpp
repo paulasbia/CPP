@@ -6,13 +6,13 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:27:42 by paula             #+#    #+#             */
-/*   Updated: 2024/04/01 16:26:00 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/01 16:50:21 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
-#include "Weapon.hpp"
+//#include "Weapon.hpp"
 
 class HumanA
 {
