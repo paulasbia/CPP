@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:28:09 by paula             #+#    #+#             */
-/*   Updated: 2024/04/01 16:50:04 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/01 17:30:46 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@ class   Weapon
 {
     public:
         Weapon();
+        Weapon(std::string type);
         ~Weapon();
     
     //Methods
-    std::string getType(void) const;
+    const std::string getType(void);
     void        setType(std::string type);
     
     private:

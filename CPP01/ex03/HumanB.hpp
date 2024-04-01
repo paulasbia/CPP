@@ -6,13 +6,13 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:28:02 by paula             #+#    #+#             */
-/*   Updated: 2024/04/01 16:57:19 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/01 17:43:20 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
-//#include "Weapon.hpp"
+#include "Weapon.hpp"
 
 class HumanB
 {
@@ -23,8 +23,9 @@ class HumanB
     
     //Methods
     void    attack( void );
+    void    setWeapon(Weapon &weapon);
     
     private:
-        std::string *m_weapon;
+        Weapon      *m_weapon;
         std::string m_name;
 };
