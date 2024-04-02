@@ -1,7 +1,7 @@
 .SILENT:
 
 NAME		= 		Harl2.0
-SRCS		=		main.cpp
+SRCS		=		main.cpp Harl.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
 CXXFLAGS	=		-Wall -Wextra -Werror -std=c++98
 RM			=		rm -f
