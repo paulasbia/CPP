@@ -6,13 +6,11 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:55:56 by paula             #+#    #+#             */
-/*   Updated: 2024/04/02 14:14:34 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/02 14:41:47 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <string_view>
+#include "replace.hpp"
 
 void    print_error(std::string msg)
 {
