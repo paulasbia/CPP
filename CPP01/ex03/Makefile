@@ -3,7 +3,7 @@
 NAME		= 		unnecessary_violence
 SRCS		=		main.cpp HumanA.cpp HumanB.cpp  Weapon.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
-CXXFLAGS		=		-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=		-Wall -Wextra -Werror -std=c++98
 RM			=		rm -f
 
 COLOUR_GREEN=\033[32m

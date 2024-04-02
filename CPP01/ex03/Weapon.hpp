@@ -6,9 +6,12 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:28:09 by paula             #+#    #+#             */
-/*   Updated: 2024/04/01 17:30:46 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/02 10:42:51 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
 #include <iostream>
 
@@ -26,3 +29,5 @@ class   Weapon
     private:
         std::string m_type;
 };
+
+#endif

@@ -6,12 +6,13 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 13:12:08 by paula             #+#    #+#             */
-/*   Updated: 2024/04/02 10:26:41 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/02 10:41:22 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+//#include "Weapon.hpp"
 #include "HumanB.hpp"
+#include "HumanA.hpp"
 
 int main()
 {
@@ -22,13 +23,13 @@ int main()
         josh.setWeapon(club);
         josh.attack();
     }
-    // {
-    //     Weapon club = Weapon("crude spiked club");
-    //     HumanA bob("Bob", club);
-    //     bob.attack();
-    //     club.setType("some other type of club");
-    //     bob.attack();
-    // }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
     {
         Weapon club = Weapon("crude spiked club");
         HumanB jim("Jim");
