@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:07:56 by paula             #+#    #+#             */
-/*   Updated: 2024/04/02 16:47:56 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/02 16:55:11 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    Harl::debug( void )
 
 void    Harl::info( void )
 {
-    std::cout << GRAY << "[INFO]    " << DEFAULT;
+    std::cout << GREEN << "[INFO]    " << DEFAULT;
     std::cout << "I cannot believe adding extra bacon costs more money. "
                 "You didn’t put enough bacon in my burger! If you did, "
                 "I wouldn’t be asking for more!" << std::endl;
@@ -52,6 +52,7 @@ void    Harl::error( void )
 
 void    Harl::complain( std::string level )
 {
+    int         key = 1;
     std::string status[4];
     status[0] = "DEBUG";
     status[1] = "INFO";
@@ -60,6 +61,13 @@ void    Harl::complain( std::string level )
     void (Harl::* f[4]) (void)  = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
     for (int i = 0; i < 4; i++)
+    {
 		if (level == status[i])
+        {
 			(this->*f[i])();
+            key = 0;
+        }
+    }
+    if (key == 1)
+        std::cout << "invalid level\n";
 }
