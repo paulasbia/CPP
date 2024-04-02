@@ -1,7 +1,7 @@
 .SILENT:
 
 NAME		= 		unnecessary_violence
-SRCS		=		main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS		=		main.cpp HumanA.cpp HumanB.cpp  Weapon.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
 CXXFLAGS		=		-Wall -Wextra -Werror -std=c++98
 RM			=		rm -f
