@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:07:56 by paula             #+#    #+#             */
-/*   Updated: 2024/04/02 16:55:11 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/02 17:10:53 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,31 +23,25 @@ Harl::~Harl( void )
 void    Harl::debug( void )
 {
     std::cout << MAGENTA << "[DEBUG]   " << DEFAULT;
-    std::cout << "I love having extra bacon for my "
-                "7XL-double-cheese-triple-pickle-special-"
-                "ketchup burger. I really do!" << std::endl;
+    std::cout << "I love having extra class to learning CPP. I really do!" << std::endl;
 }
 
 void    Harl::info( void )
 {
     std::cout << GREEN << "[INFO]    " << DEFAULT;
-    std::cout << "I cannot believe adding extra bacon costs more money. "
-                "You didn’t put enough bacon in my burger! If you did, "
-                "I wouldn’t be asking for more!" << std::endl;
+    std::cout << "I cannot undestand why I use this PTR and REf!!" << std::endl;
 }
     
 void    Harl::warning( void )
 {
     std::cout << YELLOW << "[WARNING] " << DEFAULT;
-    std::cout << "I think I deserve to have some extra bacon for free. "
-                "I’ve been coming for years whereas you started working "
-                "here since last month." << std::endl;
+    std::cout << "I think I will drop this exercises and sell my art on the beach..." << std::endl;
 }
     
 void    Harl::error( void )
 {
     std::cout << RED << "[ERROR]   " << DEFAULT;
-    std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+    std::cout << "Ok, I surrender, I'm going back to chemistry!! Goodbye!" << std::endl;
 }
 
 void    Harl::complain( std::string level )
