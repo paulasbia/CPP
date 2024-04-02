@@ -6,9 +6,12 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:27:42 by paula             #+#    #+#             */
-/*   Updated: 2024/04/01 16:50:21 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/02 10:28:33 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef HUMANA_HPP
+#define HIMANA_HPP
 
 #include <string>
 #include <iostream>
@@ -26,3 +29,5 @@ class HumanA
         std::string m_weapon;
         std::string m_name;
 };
+
+#endif
