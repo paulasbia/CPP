@@ -6,13 +6,13 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/03 14:24:39 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/05 09:04:40 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() 
+Fixed::Fixed(): _fixedPoint(0)
 { 
     std::cout << "Default constructor called\n";
 }
@@ -35,7 +35,7 @@ Fixed::~Fixed()
     std::cout << "Destructor called\n";
 }
 
-int     Fixed::getRawBits( void )
+int     Fixed::getRawBits( void ) const
 {
     std::cout << "getRawBits member function called\n";
     return (_fixedPoint);
@@ -43,5 +43,6 @@ int     Fixed::getRawBits( void )
         
 void    Fixed::setRawBits( int const raw )
 {
+    std::cout << "setRawBits member function called\n";
     _fixedPoint = raw;
 }
