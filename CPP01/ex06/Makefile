@@ -3,7 +3,7 @@
 NAME		= 		harlFilter
 SRCS		=		main.cpp Harl.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
-CXXFLAGS	=		-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=		-Wall -Wextra -Werror=implicit-fallthrough=0 -std=c++98 -pedantic
 RM			=		rm -f
 
 COLOUR_GREEN=\033[32m
