@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:27:42 by paula             #+#    #+#             */
-/*   Updated: 2024/04/02 10:44:52 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/05 08:15:24 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class HumanA
     void    attack();
     
     private:
-        Weapon      *m_weapon;
+        Weapon      &m_weapon;
         std::string m_name;
 };
 
