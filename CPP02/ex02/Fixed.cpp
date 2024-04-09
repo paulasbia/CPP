@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/09 20:05:09 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/09 20:16:48 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,25 @@ Fixed::Fixed(const float n)
 
 Fixed::Fixed(const Fixed& copy)
 {
-    std::cout << "Copy constructor called " << std::endl;
+    std::cout << "Copy constructor called" << std::endl;
     *this = copy;
 }
 
 Fixed   &Fixed::operator=(const Fixed& copy)
 {
-    std::cout << "Copy assignment operator called " << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     _fixedPoint = copy._fixedPoint;
     return *this;
 }
 
 Fixed::~Fixed() 
 {
-    std::cout << "Destructor called\n";
+    std::cout << "Destructor called" << std::endl;;
 }
 
 int     Fixed::getRawBits( void )
 {
-    std::cout << "getRawBits member function called\n";
+    std::cout << "getRawBits member function called" << std::endl;;
     return (_fixedPoint);
 }
         
@@ -179,14 +179,14 @@ Fixed	&Fixed::min(Fixed &f, Fixed &f2)
 
 Fixed	Fixed::operator++(void)
 {
-	std::cout << "Increment operator called '++this'" << std::endl;
+	std::cout << "Increment operator called '++op'" << std::endl;
     _fixedPoint++;
 	return (*this);
 }
 
 Fixed	Fixed::operator++(int)
 {
-	std::cout << "Increment operator called 'this++'" << std::endl;
+	std::cout << "Increment operator called 'op++'" << std::endl;
 	Fixed tmp(*this);
 	_fixedPoint++;
 	return (tmp);
@@ -194,14 +194,14 @@ Fixed	Fixed::operator++(int)
 
 Fixed	Fixed::operator--(void)
 {
-	std::cout << "Decrement operator called '--this'" << std::endl;
+	std::cout << "Decrement operator called '--op'" << std::endl;
 	_fixedPoint--;
 	return (*this);
 }
 
 Fixed	Fixed::operator--(int)
 {
-	std::cout << "Decrement operator called 'this--'" << std::endl;
+	std::cout << "Decrement operator called 'op--'" << std::endl;
 	Fixed tmp(*this);
 	_fixedPoint--;
 	return (tmp);
