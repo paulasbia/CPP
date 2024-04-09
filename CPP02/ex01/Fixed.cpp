@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/09 09:42:17 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/09 20:15:24 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,32 +38,32 @@ Fixed::Fixed()
 
 Fixed::Fixed( const int n )
 {
-    std::cout << "Int constructor called " << std::endl;
+    std::cout << "Int constructor called" << std::endl;
     _fixedPoint = n * ft_pow(2, this->_fractionalBits);
 }
 
 Fixed::Fixed(const float n)
 {
-	std::cout << "Float constructor called " << std::endl;
+	std::cout << "Float constructor called" << std::endl;
     _fixedPoint = roundf(n * ft_pow(2, this->_fractionalBits));
 }
 
 Fixed::Fixed(const Fixed& copy)
 {
-    std::cout << "Copy constructor called " << std::endl;
+    std::cout << "Copy constructor called" << std::endl;
     *this = copy;
 }
 
 Fixed   &Fixed::operator=(const Fixed& copy)
 {
-    std::cout << "Copy assignment operator called " << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     _fixedPoint = copy._fixedPoint;
     return *this;
 }
 
 Fixed::~Fixed() 
 {
-    std::cout << "Destructor called\n";
+    std::cout << "Destructor called" << std::endl;;
 }
 
 int     Fixed::getRawBits( void )
