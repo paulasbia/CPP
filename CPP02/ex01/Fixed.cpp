@@ -6,11 +6,29 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/08 10:59:40 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/09 09:42:17 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+
+static	float ft_pow(float base, int exp)
+{
+	float	result;
+	if (!exp)
+		return (1);
+	if (exp < 0)
+	{
+		base = 1 / base;
+		exp *= -1;
+	}
+	result = base;
+	while (--exp)
+		result *= base;
+	return (result);
+}
+
 
 Fixed::Fixed()
 { 
@@ -21,13 +39,13 @@ Fixed::Fixed()
 Fixed::Fixed( const int n )
 {
     std::cout << "Int constructor called " << std::endl;
-    _fixedPoint = n << _fractionalBits;
+    _fixedPoint = n * ft_pow(2, this->_fractionalBits);
 }
 
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called " << std::endl;
-	_fixedPoint = roundf(n * (1 << _fractionalBits));
+    _fixedPoint = roundf(n * ft_pow(2, this->_fractionalBits));
 }
 
 Fixed::Fixed(const Fixed& copy)
@@ -61,13 +79,13 @@ void    Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)_fixedPoint / (1 << _fractionalBits));
+	return (this->_fixedPoint * ft_pow(2, -this->_fractionalBits));
 }
 
 
 int		Fixed::toInt(void) const
 {
-	return (_fixedPoint / (1 << _fractionalBits));
+    return (this->_fixedPoint * ft_pow(2, -this->_fractionalBits));
 }
 
 std::ostream   &operator<<( std::ostream &o, const Fixed &fixed)
