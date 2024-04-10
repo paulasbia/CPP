@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/10 16:24:09 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:40:30 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ static	float ft_pow(float base, int exp)
 	}
 	result = base;
 	while (--exp)
+	{
 		result *= base;
+		std::cout << result << std::endl;
+	}
 	return (result);
 }
 
@@ -40,14 +43,14 @@ Fixed::Fixed( const int n )
 {
     std::cout << "Int constructor called" << std::endl;
     _fixedPoint = n * ft_pow(2, this->_fractionalBits);
-	std::cout << "Int _fixedPoint is" << _fixedPoint << std::endl;
+	std::cout << "Int _fixedPoint is " << _fixedPoint << std::endl;
 }
 
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called" << std::endl;
     _fixedPoint = roundf(n * ft_pow(2, this->_fractionalBits));
-	std::cout << "Float _fixedPoint is" << _fixedPoint << std::endl;
+	std::cout << "Float _fixedPoint is " << _fixedPoint << std::endl;
 }
 
 Fixed::Fixed(const Fixed& copy)
