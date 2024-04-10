@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/09 20:16:48 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/10 16:24:09 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,14 @@ Fixed::Fixed( const int n )
 {
     std::cout << "Int constructor called" << std::endl;
     _fixedPoint = n * ft_pow(2, this->_fractionalBits);
+	std::cout << "Int _fixedPoint is" << _fixedPoint << std::endl;
 }
 
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called" << std::endl;
     _fixedPoint = roundf(n * ft_pow(2, this->_fractionalBits));
+	std::cout << "Float _fixedPoint is" << _fixedPoint << std::endl;
 }
 
 Fixed::Fixed(const Fixed& copy)
