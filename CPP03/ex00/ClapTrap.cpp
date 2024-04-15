@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 11:43:47 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 14:42:23 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap()
     , m_energyPoints(10)
     , m_attackDamage(0)
 { 
-    std::cout << "Default constructor called" << std::endl;;
+    std::cout << "Default constructor was called" << std::endl;;
 }
 
 ClapTrap::ClapTrap(const std::string name)
@@ -31,18 +31,18 @@ ClapTrap::ClapTrap(const std::string name)
     , m_energyPoints(10)
     , m_attackDamage(0)
 { 
-    std::cout << "Constructor with parameter is called" << std::endl;;
+    std::cout << "Constructor with parameter was called" << std::endl;;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor was called" << std::endl;
     *this = copy;
 }
 
 ClapTrap   &ClapTrap::operator=(const ClapTrap& copy)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Copy assignment operator was called" << std::endl;
     m_name = copy.m_name;
     m_hitPoints = copy.m_hitPoints;
     m_energyPoints = copy.m_energyPoints;
@@ -52,7 +52,7 @@ ClapTrap   &ClapTrap::operator=(const ClapTrap& copy)
 
 ClapTrap::~ClapTrap() 
 {
-    std::cout << "Destructor called" << std::endl;;
+    std::cout << "Destructor was called" << std::endl;;
 }
 
 void ClapTrap::setAttackDamage(int attackDamage)
