@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 11:01:12 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 11:49:42 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,29 @@
 
 int main( void ) 
 {
-    ClapTrap first("paula");
-    ClapTrap second;
+    ClapTrap Jake("Jake");
+    ClapTrap Finn;
 
-    second.status();
-    first.attack("alguem");
-    first.setAttackDamage(5);
-    first.attack(second);
-    second.status();
-    second.beRepaired(1);
-    second.status();
-    first.setAttackDamage(5);
-    first.attack(second);
-    second.status();
-    first.setAttackDamage(1);
-    first.attack(second);
-    second.status();
-    first.status();
-	for (int i = 0; i < 7; i++)
-		first.attack(second);
-    first.status();
-	first.beRepaired(5);
-	second.beRepaired(5);
+    Finn.status();
+    Jake.status();
+    
+    Jake.attack("alguem");
+    Jake.status();
+    
+    Jake.setAttackDamage(5);
+    Jake.attack(Finn);
+    Finn.status();
+    Finn.beRepaired(1);
+    Finn.status();
+    Jake.setAttackDamage(1);
+    Jake.attack(Finn);
+    Finn.status();
+    Jake.status();
+	for (int i = 0; i < 8; i++)
+		Jake.attack(Finn);
+    Jake.status();
+	Jake.beRepaired(5);
+	Finn.beRepaired(5);
     
     return 0;
 }

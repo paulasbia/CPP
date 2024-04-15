@@ -6,14 +6,18 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 11:00:40 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 11:43:47 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+std::string GREEN="\033[32m";
+std::string RED="\033[31m";
+std::string  END="\033[0m";
+
 ClapTrap::ClapTrap()
-    : m_name("Somebody")
+    : m_name("Finn")
     , m_hitPoints(10)
     , m_energyPoints(10)
     , m_attackDamage(0)
@@ -66,7 +70,7 @@ void	ClapTrap::attack(ClapTrap &target)
 {
     if(m_energyPoints <= 0 || m_hitPoints <= 0)
     {
-        std::cout << m_name << " sorry, you can't attack now..." << std::endl;
+        std::cout << RED << m_name << " sorry, you can't attack now..." << std::endl << END;
         return;
     }
 	attack(target.m_name);
@@ -88,17 +92,17 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     if(m_energyPoints > 0 && m_hitPoints > 0)
     {
-        std::cout << m_name << " repair " << amount << "of hitPoints" << std::endl;
+        std::cout << m_name << " repair " << amount << " of hitPoints" << std::endl;
         m_energyPoints--;
         m_hitPoints++;
     }
     else
-        std::cout << m_name << " sorry, you can't repair more..." << std::endl;
+        std::cout << RED << m_name << " sorry, you can't repair more..." << std::endl << END;
 }
 
 void	ClapTrap::status(void)
 {
-    std::cout << "--------------------STATUS----------------------\n";
+    std::cout << GREEN << "--------------------STATUS----------------------\n";
     if (m_hitPoints <= 0)
         std::cout	<< "ClapTrap " << m_name << " is dead...RIP" << std::endl;
     else
@@ -108,5 +112,5 @@ void	ClapTrap::status(void)
 				<< "Energy Points: " << m_energyPoints << std::endl
 				<< "Attack Damage: " << m_attackDamage  << std::endl;
     }
-    std::cout << "------------------------------------------------\n";
+    std::cout << "------------------------------------------------\n" << END;
 }
