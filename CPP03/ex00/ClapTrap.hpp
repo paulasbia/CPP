@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 10:30:26 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 10:33:48 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class ClapTrap
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
         void setAttackDamage(int attackDamage);
+        void status(void);
          
     private:
         std::string m_name;
