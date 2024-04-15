@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 11:43:47 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 14:39:48 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap()
     , m_energyPoints(10)
     , m_attackDamage(0)
 { 
-    std::cout << "Default constructor called" << std::endl;;
+    std::cout << "ClapTrap " << m_name << " default constructor was called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string name)
@@ -31,7 +31,7 @@ ClapTrap::ClapTrap(const std::string name)
     , m_energyPoints(10)
     , m_attackDamage(0)
 { 
-    std::cout << "Constructor with parameter is called" << std::endl;;
+    std::cout << "ClapTrap " << m_name << " constructor with parameter was called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
@@ -52,7 +52,7 @@ ClapTrap   &ClapTrap::operator=(const ClapTrap& copy)
 
 ClapTrap::~ClapTrap() 
 {
-    std::cout << "Destructor called" << std::endl;;
+    std::cout << "ClapTrap " << m_name << " default destructor." << std::endl;
 }
 
 void ClapTrap::setAttackDamage(int attackDamage)
