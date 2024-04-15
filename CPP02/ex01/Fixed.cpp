@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/10 20:19:27 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/11 16:43:23 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 
-static	float ft_pow(float base, int exp)
-{
-	float	result;
-	if (!exp)
-		return (1);
-	if (exp < 0)
-	{
-		base = 1 / base;
-		exp *= -1;
-	}
-	result = base;
-	while (--exp)
-		result *= base;
-	return (result);
-}
+// static	float ft_pow(float base, int exp)
+// {
+// 	float	result;
+// 	if (!exp)
+// 		return (1);
+// 	if (exp < 0)
+// 	{
+// 		base = 1 / base;
+// 		exp *= -1;
+// 	}
+// 	result = base;
+// 	while (--exp)
+// 		result *= base;
+// 	return (result);
+// }
 
 Fixed::Fixed()
 { 
@@ -46,7 +46,8 @@ Fixed::Fixed( const int n )
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called" << std::endl;
-    _fixedPoint = static_cast<int>(roundf(n * ft_pow(2, this->_fractionalBits)));
+   // _fixedPoint = static_cast<int>(roundf(n * ft_pow(2, this->_fractionalBits)));
+    _fixedPoint = roundf(n * (1 << _fractionalBits));
     std::cout << "Float _fixedPoint is" << _fixedPoint << std::endl;
 }
 
@@ -81,7 +82,8 @@ void    Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat(void) const
 {
-	return (static_cast<float>(this->_fixedPoint * ft_pow(2, -this->_fractionalBits)));
+	//return (static_cast<float>(this->_fixedPoint * ft_pow(2, -this->_fractionalBits)));
+    return ((float)_fixedPoint / (1 << _fractionalBits));
 }
 
 int		Fixed::toInt(void) const
