@@ -6,17 +6,18 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 15:28:33 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 16:10:15 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main( void ) 
 {
-    ScavTrap Somebody;
+    FragTrap Somebody;
     ScavTrap Jake("Jake");
-    ClapTrap Finn("Finn");
+    FragTrap Finn("Finn");
     ScavTrap Simon("Simon");
 
     Finn.status();
@@ -26,7 +27,9 @@ int main( void )
     Jake.status();
     Jake.attack(Finn);
     Finn.status();
-    Finn.beRepaired(1);
+    Finn.highFivesGuys();
+    Finn.beRepaired(10);
+    Finn.status();
     Jake.setAttackDamage(30);
     Jake.attack(Simon);
     Simon.status();

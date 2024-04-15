@@ -6,12 +6,12 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:39:59 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 15:43:14 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 15:47:48 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef FRAGTRAP_H
+#define FRAGTRAP_H
 
 #include "ClapTrap.hpp"
 
