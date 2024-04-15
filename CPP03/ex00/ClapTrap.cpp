@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 14:42:23 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 15:33:12 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if(m_hitPoints <= 0)
     {
-        std::cout << m_name << " is dead already " << std::endl;
+        std::cout << m_name << " is already dead" << std::endl;
         return;
     }
     std::cout << m_name << " recieve " << amount << " of damage" << std::endl;
