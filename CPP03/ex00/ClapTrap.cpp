@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 10:00:36 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 10:31:44 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,30 @@ ClapTrap::~ClapTrap()
 {
     std::cout << "Destructor called" << std::endl;;
 }
+
+void ClapTrap::setAttackDamage(int attackDamage)
+{
+	m_attackDamage = attackDamage;
+}
+
+void ClapTrap::attack(const std::string& target)
+{
+    std::cout << "ClapTrap " << m_name << " attacks " << target << " causing " << m_attackDamage << " points of damage!" << std::endl;
+    m_energyPoints--;
+}
+
+void	ClapTrap::attack(ClapTrap &target)
+{
+	attack(target.m_name);
+	target.takeDamage(m_attackDamage);
+}
+
+void ClapTrap::takeDamage(unsigned int amount)
+{
+    std::cout << m_name << " recieve " << amount << " of damage" << std::endl;
+}
+
+// void ClapTrap::beRepaired(unsigned int amount)
+// {
+    
+// }
