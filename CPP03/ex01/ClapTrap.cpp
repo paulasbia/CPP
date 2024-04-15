@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 14:39:48 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 15:30:25 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ std::string RED="\033[31m";
 std::string  END="\033[0m";
 
 ClapTrap::ClapTrap()
-    : m_name("Finn")
+    : m_name("Clap")
     , m_hitPoints(10)
     , m_energyPoints(10)
     , m_attackDamage(0)
@@ -55,6 +55,11 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap " << m_name << " default destructor." << std::endl;
 }
 
+const std::string&	ClapTrap::getName(void) const
+{
+	return (m_name);
+}
+
 void ClapTrap::setAttackDamage(int attackDamage)
 {
 	m_attackDamage = attackDamage;
@@ -81,7 +86,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if(m_hitPoints <= 0)
     {
-        std::cout << m_name << " is dead already " << std::endl;
+        std::cout << RED << m_name << " is already dead" << std::endl << END;
         return;
     }
     std::cout << m_name << " recieve " << amount << " of damage" << std::endl;
@@ -104,7 +109,7 @@ void	ClapTrap::status(void)
 {
     std::cout << GREEN << "--------------------STATUS----------------------\n";
     if (m_hitPoints <= 0)
-        std::cout	<< "ClapTrap " << m_name << " is dead...RIP" << std::endl;
+        std::cout	<< RED << m_name << " is dead...RIP" << std::endl << GREEN;
     else
     {
 	std::cout	<< "ClapTrap " << m_name << ": " << std::endl

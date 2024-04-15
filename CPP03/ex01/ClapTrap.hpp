@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 14:24:46 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 15:02:44 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ClapTrap
         ~ClapTrap();
         
     //Methods
+        const std::string&	getName(void) const;
         void attack(const std::string& target);
         void attack(ClapTrap &target);
         void takeDamage(unsigned int amount);
