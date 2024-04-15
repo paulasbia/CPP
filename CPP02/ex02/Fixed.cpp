@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/11 14:53:57 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/15 13:21:20 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,14 +185,14 @@ Fixed	&Fixed::min(Fixed &f, Fixed &f2)
 
 //	Increment and decrement operators
 
-Fixed	Fixed::operator++(int)
+Fixed	&Fixed::operator++(void)
 {
 	std::cout << "Increment operator called '++op'" << std::endl;
     _fixedPoint++;
 	return (*this);
 }
 
-Fixed	Fixed::operator++(void)
+Fixed	Fixed::operator++(int)
 {
 	std::cout << "Increment operator called 'op++'" << std::endl;
 	Fixed tmp(*this);
@@ -200,7 +200,7 @@ Fixed	Fixed::operator++(void)
 	return (tmp);
 }
 
-Fixed	Fixed::operator--(void)
+Fixed	&Fixed::operator--(void)
 {
 	std::cout << "Decrement operator called '--op'" << std::endl;
 	_fixedPoint--;

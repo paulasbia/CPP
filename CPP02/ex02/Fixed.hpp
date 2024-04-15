@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/09 11:13:36 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/15 13:18:58 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ class Fixed
 		Fixed				operator/(const Fixed &f) const;
 		
         // Others operators 
-        Fixed				operator++(void);
+        Fixed				&operator++(void);
 		Fixed				operator++(int);
-		Fixed				operator--(void);
+		Fixed				&operator--(void);
 		Fixed				operator--(int);
 
         // Max and Min
