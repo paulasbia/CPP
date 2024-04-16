@@ -3,35 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 13:21:20 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/16 10:33:07 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-
-// static	float ft_pow(float base, int exp)
-// {
-// 	float	result;
-// 	if (!exp)
-// 		return (1);
-// 	if (exp < 0)
-// 	{
-// 		base = 1 / base;
-// 		exp *= -1;
-// 	}
-// 	result = base;
-// 	while (--exp)
-// 	{
-// 		result *= base;
-// 	//	std::cout << result << std::endl;
-// 	}
-// 	return (result);
-// }
-
 
 Fixed::Fixed()
 { 
@@ -42,15 +21,13 @@ Fixed::Fixed()
 Fixed::Fixed( const int n )
 {
     std::cout << "Int constructor called" << std::endl;
-   // _fixedPoint = n * ft_pow(2, this->_fractionalBits);
-   _fixedPoint = n << _fractionalBits;
+    _fixedPoint = n << _fractionalBits;
 	std::cout << "Int _fixedPoint is " << _fixedPoint << std::endl;
 }
 
 Fixed::Fixed(const float n)
 {
 	std::cout << "Float constructor called" << std::endl;
-   // _fixedPoint = static_cast<int>(roundf(n * ft_pow(2, this->_fractionalBits)));
     _fixedPoint = roundf(n * (1 << _fractionalBits));
 	std::cout << "Float _fixedPoint is " << _fixedPoint << std::endl;
 }
@@ -86,13 +63,11 @@ void    Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat(void) const
 {
-	//return (static_cast<float>(this->_fixedPoint) * ft_pow(2, -this->_fractionalBits));
 	return ((float)_fixedPoint / (1 << _fractionalBits));
 }
 
 int		Fixed::toInt(void) const
 {
-    //return (this->_fixedPoint * ft_pow(2, -this->_fractionalBits));
 	return (this->_fixedPoint >> _fractionalBits);
 }
 
@@ -161,7 +136,7 @@ Fixed	Fixed::operator/(const Fixed &f) const
 // min max
 const Fixed	&Fixed::max(const Fixed &f, const Fixed &f2)
 {
-	std::cout << "max member function called" << std::endl;
+	std::cout << "const max member function called" << std::endl;
 	return (f > f2 ? f : f2);
 }
 
@@ -173,7 +148,7 @@ Fixed	&Fixed::max(Fixed &f, Fixed &f2)
 
 const Fixed	&Fixed::min(const Fixed &f, const Fixed &f2)
 {
-	std::cout << "min member function called" << std::endl;
+	std::cout << "const min member function called" << std::endl;
 	return (f < f2 ? f : f2);
 }
 
