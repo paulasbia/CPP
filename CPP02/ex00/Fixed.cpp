@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/16 10:20:01 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/16 10:22:30 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Fixed::Fixed(const Fixed& copy)
 
 Fixed   &Fixed::operator=(const Fixed& copy)
 {
-    std:: cout  << "this is assigment operator" << std::endl;
+    std:: cout  << "Assigment operator called" << std::endl;
     if(this == &copy)
         return *this;
     _fixedPoint = copy.getRawBits();
