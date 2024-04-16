@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:40:02 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 16:09:06 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/16 16:27:27 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,14 @@ FragTrap &FragTrap::operator=(const FragTrap& copy)
 
 void FragTrap::attack(const std::string& target)
 {
+    std::string RED="\033[31m";
+    std::string  END="\033[0m";
+
+    if(m_energyPoints <= 0 || m_hitPoints <= 0)
+    {
+        std::cout << RED << "FragTrap " << m_name << " sorry, you can't attack now..." << std::endl << END;
+        return;
+    }
     std::cout << "FragTrap " << m_name << " attacks " << target << " causing " << m_attackDamage << " points of damage!" << std::endl;
     m_energyPoints--;
 }
@@ -64,7 +72,7 @@ void	FragTrap::attack(ClapTrap &target)
     
     if(m_energyPoints <= 0 || m_hitPoints <= 0)
     {
-        std::cout << RED << m_name << " sorry, you can't attack now..." << std::endl << END;
+        std::cout << RED << "FragTrap " << m_name << " sorry, you can't attack now..." << std::endl << END;
         return;
     }
 	attack(target.getName());

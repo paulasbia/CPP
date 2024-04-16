@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/15 15:30:25 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/16 16:27:02 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,11 @@ void ClapTrap::setAttackDamage(int attackDamage)
 
 void ClapTrap::attack(const std::string& target)
 {
+    if(m_energyPoints <= 0 || m_hitPoints <= 0)
+    {
+        std::cout << RED << "ClapTrap " << m_name << " sorry, you can't attack now..." << std::endl << END;
+        return;
+    }
     std::cout << "ClapTrap " << m_name << " attacks " << target << " causing " << m_attackDamage << " points of damage!" << std::endl;
     m_energyPoints--;
 }
@@ -75,7 +80,7 @@ void	ClapTrap::attack(ClapTrap &target)
 {
     if(m_energyPoints <= 0 || m_hitPoints <= 0)
     {
-        std::cout << RED << m_name << " sorry, you can't attack now..." << std::endl << END;
+        std::cout << RED << "ClapTrap " << m_name << " sorry, you can't attack now..." << std::endl << END;
         return;
     }
 	attack(target.m_name);
