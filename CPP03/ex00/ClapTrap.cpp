@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/16 16:22:08 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/16 17:10:21 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     {
         std::cout << m_name << " repair " << amount << " of hitPoints" << std::endl;
         m_energyPoints--;
-        m_hitPoints++;
+        m_hitPoints += amount;
     }
     else
         std::cout << RED << m_name << " sorry, you can't repair more..." << std::endl << END;
