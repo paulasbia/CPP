@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 15:24:08 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 16:22:44 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,21 @@ int main()
     
     std::cout << GREEN << "-----------------COPY------------------" << std::endl << END;
     const Cat cat;
-    const Cat sirius(cat);
+    const Dog dog;
+    Cat sirius(cat);
+    Dog jake(dog);
+    
 
-    std::cout << GREEN << "----------------WRONG------------------" << std::endl << END;
+    std::cout << GREEN << "----------------IDEAS------------------" << std::endl << END;
+   // sirius.getBrain()->setIdeas("I love tuna!");
+    std::cout << *sirius.getBrain()->getIdeas() << std::endl;
+
+    const std::string *ideas;
+    jake.getBrain()->setIdeas("Let`s go to the park!");
+    ideas = jake.getBrain()->getIdeas();
+    for(int i = 0; i < 3; i++)
+        std::cout << "ideas of Jake: " << ideas[i] << std::endl;
+    
 
     std::cout << GREEN << "---------------------------------------" << std::endl << END;
     

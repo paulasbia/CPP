@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 15:38:39 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 16:05:04 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,9 @@ Cat::~Cat()
 void        Cat::makeSound() const
 {
     std::cout << MAGENTA << "Prrrrrr...Meow Meow..." << std::endl << END;
+}
+
+Brain	*Cat::getBrain(void) const 
+{
+	return (brain);
 }

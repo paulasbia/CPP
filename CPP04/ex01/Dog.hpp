@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 15:01:05 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 16:16:12 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Dog : public Animal
         
     //Methods
     virtual void        makeSound() const;
+    Brain	            *getBrain(void) const;
 
     private:
     Brain   *brain;

@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 15:18:58 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 16:16:19 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,9 @@ Dog::~Dog()
 void        Dog::makeSound() const
 {
     std::cout << BLUE << "Rrrrrrrr...Au au..." << std::endl << END;
+}
+
+Brain	*Dog::getBrain(void) const 
+{
+	return (brain);
 }
