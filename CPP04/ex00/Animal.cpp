@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 10:37:27 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 15:28:21 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Animal::Animal()
 Animal::Animal(const std::string type)
 {
     _type = type; 
-    std::cout << "Animal default constructor was called" << std::endl << END;
+    std::cout << "Animal constructor with parameter was called" << std::endl << END;
 }
 
 Animal::Animal(const Animal& copy)
