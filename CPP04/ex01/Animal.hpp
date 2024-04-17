@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 10:37:56 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 16:34:54 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ANIMAL_HPP
 
 #include <iostream>
+#include <string>
 
 #define END     "\033[0m"
 #define RED     "\033[31m"      

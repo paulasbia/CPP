@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 16:25:52 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 16:40:34 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Brain::Brain()
 { 
     std::cout << "Brain default constructor was called" << std::endl << END;
+    setIdeas("");
 }
 
 Brain::Brain(const Brain& copy)
@@ -45,7 +46,7 @@ const std::string      *Brain::getIdeas() const
     return _ideas;
 }
 
-void                Brain::setIdeas(std::string idea)
+void    Brain::setIdeas(std::string idea)
 {
     if (idea.empty())
         idea = "zzzzzzz...zzzzzzz";
