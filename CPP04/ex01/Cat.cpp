@@ -6,15 +6,16 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 15:13:58 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 15:38:39 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat"), brain(new Brain)
+Cat::Cat() : Animal("Cat")
 { 
     std::cout << MAGENTA << "Cat default constructor was called" << std::endl << END;
+    brain = new Brain;
 }
 
 Cat::Cat(const Cat& copy) : Animal(copy)
@@ -22,7 +23,7 @@ Cat::Cat(const Cat& copy) : Animal(copy)
     std::cout << MAGENTA << "Cat copy constructor called" << std::endl << END;
     if (this == &copy)
 		return ;
-    *this = copy;
+    brain = new Brain(*copy.brain);
 }
 
 Cat   &Cat::operator=(const Cat& copy)
@@ -30,8 +31,9 @@ Cat   &Cat::operator=(const Cat& copy)
     std::cout << MAGENTA << "Cat copy assignment operator called" << std::endl << END;
     if (this == &copy)
 		return *this;
-    _type = copy._type;
-    brain = copy.brain;
+    *this = copy;
+    // _type = copy._type;
+    // brain = copy.brain;
     return *this;
 }
 
