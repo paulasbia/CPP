@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 09:48:36 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 10:34:17 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Cat::Cat() : Animal("Cat")
 { 
-    std::cout << "Cat default constructor was called" << std::endl;
+    std::cout << MAGENTA << "Cat default constructor was called" << std::endl << END;
 }
 
 Cat::Cat(const Cat& copy) : Animal("Cat")
 {
-    std::cout << "Cat copy constructor called" << std::endl;
+    std::cout << MAGENTA << "Cat copy constructor called" << std::endl << END;
     *this = copy;
 }
 
 Cat   &Cat::operator=(const Cat& copy)
 {
-    std::cout << "Cat copy assignment operator called" << std::endl;
+    std::cout << MAGENTA << "Cat copy assignment operator called" << std::endl << END;
     if(this != &copy)
         Animal::operator=(copy);
     return *this;
@@ -33,10 +33,10 @@ Cat   &Cat::operator=(const Cat& copy)
 
 Cat::~Cat()
 {
-    std::cout << "Cat default destructor" << std::endl;
+    std::cout << MAGENTA << "Cat default destructor" << std::endl << END;
 }
 
 void        Cat::makeSound() const
 {
-    std::cout << "Prrrrrr...Meow..." << std::endl;
+    std::cout << MAGENTA << "Prrrrrr...Meow Meow..." << std::endl << END;
 }

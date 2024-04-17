@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 09:50:24 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 10:34:33 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Dog::Dog() : Animal("Dog")
 { 
-    std::cout << "Dog default constructor was called" << std::endl;
+    std::cout << BLUE << "Dog default constructor was called" << std::endl << END;
 }
 
 Dog::Dog(const Dog& copy) : Animal("Dog")
 {
-    std::cout << "Dog copy constructor called" << std::endl;
+    std::cout << BLUE << "Dog copy constructor called" << std::endl << END;
     *this = copy;
 }
 
 Dog   &Dog::operator=(const Dog& copy)
 {
-    std::cout << "Dog copy assignment operator called" << std::endl;
+    std::cout << BLUE << "Dog copy assignment operator called" << std::endl << END;
     if(this != &copy)
         Animal::operator=(copy);
     return *this;
@@ -33,10 +33,10 @@ Dog   &Dog::operator=(const Dog& copy)
 
 Dog::~Dog()
 {
-    std::cout << "Dog default destructor" << std::endl;
+    std::cout << BLUE << "Dog default destructor" << std::endl << END;
 }
 
 void        Dog::makeSound() const
 {
-    std::cout << "Rrrrrrrr...Au au..." << std::endl;
+    std::cout << BLUE << "Rrrrrrrr...Au au..." << std::endl << END;
 }
