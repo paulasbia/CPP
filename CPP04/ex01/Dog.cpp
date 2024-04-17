@@ -6,15 +6,16 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 16:16:19 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 16:31:27 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog"), brain(new Brain)
+Dog::Dog() : Animal("Dog")
 { 
     std::cout << BLUE << "Dog default constructor was called" << std::endl << END;
+    brain = new Brain();
 }
 
 Dog::Dog(const Dog& copy) : Animal(copy)
@@ -22,7 +23,7 @@ Dog::Dog(const Dog& copy) : Animal(copy)
     std::cout << BLUE << "Dog copy constructor called" << std::endl << END;
     if (this == &copy)
 		return ;
-    *this = copy;
+    brain = new Brain(*copy.brain);
 }
 
 Dog   &Dog::operator=(const Dog& copy)
@@ -30,8 +31,9 @@ Dog   &Dog::operator=(const Dog& copy)
     std::cout << BLUE << "Dog copy assignment operator called" << std::endl << END;
     if (this == &copy)
 		return *this;
-    _type = copy._type;
-    brain = copy.brain;
+    *this = copy;
+    // _type = copy._type;
+    // brain = copy.brain;
     return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 16:05:04 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 16:30:55 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cat::Cat() : Animal("Cat")
 { 
     std::cout << MAGENTA << "Cat default constructor was called" << std::endl << END;
-    brain = new Brain;
+    brain = new Brain();
 }
 
 Cat::Cat(const Cat& copy) : Animal(copy)
