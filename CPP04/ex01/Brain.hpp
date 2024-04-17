@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 14:18:31 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 14:28:36 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGWANIMAL_HPP
-# define WRONGWANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 #include <iostream>
 
@@ -21,22 +21,21 @@
 #define BLUE    "\033[34m"      
 #define MAGENTA "\033[35m"      
 
-class WrongAnimal 
+class Brain 
 {
     public:
-    WrongAnimal();
-    WrongAnimal(const std::string type);
-    WrongAnimal(const WrongAnimal& copy);
+    Brain();
+    Brain(const std::string type);
+    Brain(const Brain& copy);
         
-    WrongAnimal& operator=(const WrongAnimal& copy);
-    virtual ~WrongAnimal();
+    Brain& operator=(const Brain& copy);
+    virtual ~Brain();
         
     //Methods
-    void        makeSound() const;
-    const std::string   getType() const;
+    const std::string   *getIdeas() const;
          
     protected:
-        std::string _type;
+        std::string _ideas[100];
 
     };
 
