@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/16 17:16:25 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:48:19 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,41 @@ std::string  END="\033[0m";
 
 Animal::Animal()
 { 
-    std::cout << " default constructor was called" << std::endl;
+    std::cout << "Animal default constructor was called" << std::endl;
+}
+
+Animal::Animal(const std::string type)
+{
+    _type = type; 
+    std::cout << "Animal default constructor was called" << std::endl;
 }
 
 Animal::Animal(const Animal& copy)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Animal copy constructor called" << std::endl;
     *this = copy;
 }
 
 Animal   &Animal::operator=(const Animal& copy)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Animal copy assignment operator called" << std::endl;
+    if(this == &copy)
+        return *this;
+    this->_type = copy._type;
     return *this;
+}
+
+Animal::~Animal()
+{
+    std::cout << "Animal default destructor" << std::endl;
+}
+
+const std::string      Animal::getType() const
+{
+    return _type;
+}
+
+void        Animal::makeSound() const
+{
+    std::cout << "zzzzzzzzzzzzz..." << std::endl;
 }

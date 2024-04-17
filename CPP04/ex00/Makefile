@@ -1,7 +1,7 @@
 .SILENT:
 
 NAME		= 		Polymorphism
-SRCS		=		main.cpp Animal.cpp
+SRCS		=		main.cpp Animal.cpp Cat.cpp Dog.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
 CXXFLAGS	=		-Wall -Wextra -Werror -std=c++98
 RM			=		rm -f
