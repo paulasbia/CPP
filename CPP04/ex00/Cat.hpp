@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 09:33:32 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 10:17:46 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public Animal
     Cat(const Cat& copy);
         
     Cat& operator=(const Cat& copy);
-    ~Cat();
+    virtual ~Cat();
         
     //Methods
     virtual void        makeSound() const;
