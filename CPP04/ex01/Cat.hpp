@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 10:21:34 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 15:01:26 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal 
 {
@@ -28,7 +29,8 @@ class Cat : public Animal
     //Methods
     virtual void        makeSound() const;
 
-
-    };
+    private:
+    Brain   *brain;
+};
 
 #endif

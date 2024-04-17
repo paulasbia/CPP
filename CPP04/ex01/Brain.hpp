@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 14:28:36 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 14:32:57 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Brain
         
     //Methods
     const std::string   *getIdeas() const;
+    void                setIdeas(std::string idea);
          
     protected:
         std::string _ideas[100];

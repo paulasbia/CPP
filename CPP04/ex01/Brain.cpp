@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 14:28:31 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 15:05:39 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,10 @@ Brain::~Brain()
 const std::string      *Brain::getIdeas() const
 {
     return _ideas;
+}
+
+void                Brain::setIdeas(std::string idea)
+{
+    for (int i = 0; i < 100; i++)
+        _ideas[i] = idea;
 }

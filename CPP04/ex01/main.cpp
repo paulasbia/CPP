@@ -6,46 +6,39 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 11:03:31 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 15:06:01 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+
+#define SIZE_GROUP 5
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    Animal* animalGroup[SIZE_GROUP];
     
-    std::cout << GREEN << "----------------START-----------------" << std::endl << END;
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();
-    j->makeSound();
-    meta->makeSound();
+    std::cout << GREEN << "----------------CREATION-----------------" << std::endl << END;
+    for (int i = 0; i < SIZE_GROUP; i++)
+    {
+        if(i < SIZE_GROUP / 2)
+            animalGroup[i] = new Cat();
+        else
+            animalGroup[i] = new Dog();
+    }
+    
     std::cout << GREEN << "---------------------------------------" << std::endl << END;
 
     std::cout << GREEN << "----------------WRONG------------------" << std::endl << END;
-    const WrongAnimal* wMeta = new WrongAnimal();
-    const WrongAnimal* wCat = new WrongCat();
-    
-    std::cout << wCat->getType() << " " << std::endl;
-    wCat->makeSound();
-    wMeta->makeSound();
+
     std::cout << GREEN << "---------------------------------------" << std::endl << END;
     
 
-    
-    delete meta;            
-    delete i;
-    delete j;
-    delete wCat;
-    delete wMeta;
-    
+    for (int i = 0; i < SIZE_GROUP; i++)
+    {
+        delete animalGroup[i];    
+    }
     return 0;
 }
