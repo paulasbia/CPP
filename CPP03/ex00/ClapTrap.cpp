@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/16 17:10:21 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:12:46 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if(m_hitPoints <= 0)
     {
-        std::cout << m_name << " is already dead" << std::endl;
+        std::cout << m_name << " is already dead 👼" << std::endl;
         return;
     }
     std::cout << m_name << " recieve " << amount << " of damage" << std::endl;
@@ -109,13 +109,13 @@ void	ClapTrap::status(void)
 {
     std::cout << GREEN << "--------------------STATUS----------------------\n";
     if (m_hitPoints <= 0)
-        std::cout	<< "ClapTrap " << m_name << " is dead...RIP" << std::endl;
+        std::cout << m_name << " is dead...RIP ⚰️" << std::endl;
     else
     {
-	std::cout	<< "ClapTrap " << m_name << ": " << std::endl
-				<< "Hit Points: " << m_hitPoints << std::endl
-				<< "Energy Points: " << m_energyPoints << std::endl
-				<< "Attack Damage: " << m_attackDamage  << std::endl;
+	std::cout	<< "Info about " << m_name << " 📖: " << std::endl
+				<< "Hit Points 💚: " << m_hitPoints << std::endl
+				<< "Energy Points 💥: " << m_energyPoints << std::endl
+				<< "Attack Damage 💢: " << m_attackDamage  << std::endl;
     }
     std::cout << "------------------------------------------------\n" << END;
 }
