@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 15:04:36 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 15:15:05 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ Dog::Dog(const Dog& copy) : Animal(copy)
 Dog   &Dog::operator=(const Dog& copy)
 {
     std::cout << BLUE << "Dog copy assignment operator called" << std::endl << END;
-    if(this != &copy)
-        Animal::operator=(copy);
+    if (this == &copy)
+		return ;
+    _type = copy._type;
+    brain = copy.brain;
     return *this;
 }
 

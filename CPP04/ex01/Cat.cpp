@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 15:04:02 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/17 15:13:58 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ Cat::Cat(const Cat& copy) : Animal(copy)
 Cat   &Cat::operator=(const Cat& copy)
 {
     std::cout << MAGENTA << "Cat copy assignment operator called" << std::endl << END;
-    if(this != &copy)
-        Animal::operator=(copy);
+    if (this == &copy)
+		return *this;
+    _type = copy._type;
+    brain = copy.brain;
     return *this;
 }
 
