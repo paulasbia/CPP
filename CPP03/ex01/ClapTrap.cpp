@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 08:13:46 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/18 09:54:52 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ ClapTrap   &ClapTrap::operator=(const ClapTrap& copy)
 
 ClapTrap::~ClapTrap() 
 {
-    std::cout << "ClapTrap " << m_name << " default destructor." << std::endl;
+    std::cout << "ClapTrap " << m_name << " destructor." << std::endl;
 }
 
 const std::string&	ClapTrap::getName(void) const

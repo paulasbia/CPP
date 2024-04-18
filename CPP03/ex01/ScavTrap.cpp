@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 14:08:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/16 16:26:48 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:55:10 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap( void ) : ClapTrap()
 
 ScavTrap::~ScavTrap( void )
 {
-    std::cout << "ScavTrap " << m_name << " default destructor." << std::endl;
+    std::cout << "ScavTrap " << m_name << " destructor." << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
