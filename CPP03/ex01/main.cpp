@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/18 09:47:51 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:02:54 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main( void ) 
 {
-    ScavTrap Somebody;
     ScavTrap Jake("Jake");
     ClapTrap Finn("Finn");
     ScavTrap Simon("Simon");
