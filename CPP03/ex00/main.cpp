@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/16 16:08:32 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:47:45 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main( void )
     Finn.status();
     Jake.status();
     
-    Jake.attack("alguem");
+    Jake.attack("rock");
     Jake.status();
     
     Jake.setAttackDamage(5);
