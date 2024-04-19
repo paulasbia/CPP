@@ -1,7 +1,7 @@
 .SILENT:
 
-NAME		= 		onFire
-SRCS		=		main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
+NAME		= 		AbstractClass
+SRCS		=		main.cpp AAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
 CXXFLAGS	=		-Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM			=		rm -f

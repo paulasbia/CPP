@@ -6,13 +6,13 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:59:25 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 11:03:50 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : AAnimal("Dog")
 { 
     std::cout << BLUE << "Dog default constructor was called" << std::endl << END;
     try {
@@ -23,7 +23,7 @@ Dog::Dog() : Animal("Dog")
     }
 }
 
-Dog::Dog(const Dog& copy) : Animal(copy)
+Dog::Dog(const Dog& copy) : AAnimal(copy)
 {
     std::cout << BLUE << "Dog copy constructor called" << std::endl << END;
     _brain = new Brain(*copy._brain);

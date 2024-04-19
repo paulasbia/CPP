@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:27:57 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 11:27:33 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main()
  {
-    Animal* animalGroup[SIZE_GROUP];
+    AAnimal* animalGroup[SIZE_GROUP];
     
     std::cout << GREEN << "----------------CONSTRUCTOR-----------------" << std::endl << END;
     for (int i = 0; i < SIZE_GROUP; i++)
@@ -56,8 +56,8 @@ int main()
         std::cout << "Jake`s idea: " << ideas[i] << std::endl;
 
     std::cout << GREEN << "----------------DEEPCOPIES------------------" << std::endl << END;
-    Animal* originalCat = new Cat();
-    Animal* deepcopyCat = new Cat();
+    AAnimal* originalCat = new Cat();
+    AAnimal* deepcopyCat = new Cat();
     
     *deepcopyCat = *originalCat;
     
@@ -66,8 +66,8 @@ int main()
     std::cout << "deepcopy addresss: " << std:: endl;
     deepcopyCat->printAddress();
 
-    Animal* originalDog = new Dog();
-    Animal* deepCopyDog = new Dog(*(Dog*)(originalDog));
+    AAnimal* originalDog = new Dog();
+    AAnimal* deepCopyDog = new Dog(*(Dog*)(originalDog));
     std::cout << "original addresss: " << std:: endl;
     originalDog->printAddress();
     std::cout << "deepcopy addresss: " << std:: endl;

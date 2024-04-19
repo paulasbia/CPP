@@ -6,13 +6,13 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:59:22 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 11:12:01 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 { 
     std::cout << MAGENTA << "Cat default constructor was called" << std::endl << END;
     try {
@@ -23,7 +23,7 @@ Cat::Cat() : Animal("Cat")
     }
 }
 
-Cat::Cat(const Cat& copy) : Animal(copy)
+Cat::Cat(const Cat& copy) : AAnimal(copy)
 {
     std::cout << MAGENTA << "Cat copy constructor called" << std::endl << END;
     _brain = new Brain(*copy._brain);
