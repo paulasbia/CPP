@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:03:36 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 10:16:33 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void        Animal::makeSound() const
     std::cout << RED << "xxxx WITHOUT SONG xxxx" << std::endl << END;
 }
 
-void        Animal::printAdress()
+void        Animal::printAddress()
 {
     std::cout << RED << "The adress is " << this << std::endl << END;
 }

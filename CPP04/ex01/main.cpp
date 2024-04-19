@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:06:55 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 10:16:52 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,16 @@ int main()
     Dog jake(dog);
     
 
-    std::cout << GREEN << "----------------IDEAS------------------" << std::endl << END;
+    std::cout << GREEN << "--------------------IDEAS----------------------" << std::endl << END;
+    std::cout << GREEN << "--------->DEFAULT:" << std::endl << END;
     std::cout << *sirius.getBrain()->getIdeas() << std::endl;
+    std::cout << GREEN << "--------->SIRIUS:" << std::endl << END;
     sirius.getBrain()->setIdeas("I love tuna!");
     std::cout << "Sirius`s idea: " << *sirius.getBrain()->getIdeas() << std::endl;
 
     const std::string *ideas;
     jake.getBrain()->setIdeas("Let`s go to the park!");
+    std::cout << GREEN << "--------->JAKE:" << std::endl << END;
     ideas = jake.getBrain()->getIdeas();
     for(int i = 0; i < 3; i++)
         std::cout << "Jake`s idea: " << ideas[i] << std::endl;
@@ -60,16 +63,16 @@ int main()
     *deepcopyCat = *originalCat;
     
     std::cout << "original adresss: " << std:: endl;
-    originalCat->printAdress();
+    originalCat->printAddress();
     std::cout << "deepcopy adresss: " << std:: endl;
-    deepcopyCat->printAdress();
+    deepcopyCat->printAddress();
 
     Animal* originalDog = new Dog();
     Animal* deepCopyDog = new Dog(*(Dog*)(originalDog));
     std::cout << "original adresss: " << std:: endl;
-    originalDog->printAdress();
+    originalDog->printAddress();
     std::cout << "deepcopy adresss: " << std:: endl;
-    deepCopyDog->printAdress();
+    deepCopyDog->printAddress();
     
 
     std::cout << GREEN << "---------------------------------------" << std::endl << END;
