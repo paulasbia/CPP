@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 16:30:55 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 10:05:24 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ Cat   &Cat::operator=(const Cat& copy)
     if (this == &copy)
 		return *this;
     *this = copy;
-    // _type = copy._type;
-    // brain = copy.brain;
+    _type = copy._type;
+    brain = copy.brain;
     return *this;
 }
 

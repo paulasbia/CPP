@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 16:42:44 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 10:06:55 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,24 @@ int main()
     ideas = jake.getBrain()->getIdeas();
     for(int i = 0; i < 3; i++)
         std::cout << "Jake`s idea: " << ideas[i] << std::endl;
+
+    std::cout << GREEN << "----------------DEEPCOPIES------------------" << std::endl << END;
+    Animal* originalCat = new Cat();
+    Animal* deepcopyCat = new Cat();
+    
+    *deepcopyCat = *originalCat;
+    
+    std::cout << "original adresss: " << std:: endl;
+    originalCat->printAdress();
+    std::cout << "deepcopy adresss: " << std:: endl;
+    deepcopyCat->printAdress();
+
+    Animal* originalDog = new Dog();
+    Animal* deepCopyDog = new Dog(*(Dog*)(originalDog));
+    std::cout << "original adresss: " << std:: endl;
+    originalDog->printAdress();
+    std::cout << "deepcopy adresss: " << std:: endl;
+    deepCopyDog->printAdress();
     
 
     std::cout << GREEN << "---------------------------------------" << std::endl << END;
