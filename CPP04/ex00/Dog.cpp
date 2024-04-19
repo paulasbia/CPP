@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 10:34:33 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 10:00:32 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Dog::Dog() : Animal("Dog")
     std::cout << BLUE << "Dog default constructor was called" << std::endl << END;
 }
 
-Dog::Dog(const Dog& copy) : Animal("Dog")
+Dog::Dog(const Dog& copy) : Animal(copy)
 {
     std::cout << BLUE << "Dog copy constructor called" << std::endl << END;
     *this = copy;
@@ -26,8 +26,9 @@ Dog::Dog(const Dog& copy) : Animal("Dog")
 Dog   &Dog::operator=(const Dog& copy)
 {
     std::cout << BLUE << "Dog copy assignment operator called" << std::endl << END;
-    if(this != &copy)
-        Animal::operator=(copy);
+    if(this == &copy)
+        return *this;;
+    this->_type = copy._type;
     return *this;
 }
 

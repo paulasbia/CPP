@@ -3,7 +3,7 @@
 NAME		= 		Polymorphism
 SRCS		=		main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
-CXXFLAGS	=		-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=		-Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM			=		rm -f
 
 COLOUR_GREEN=\033[32m

@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 10:37:56 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 09:27:28 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Animal
         
     //Methods
     virtual void        makeSound() const;
+    virtual void          printAdress();
     const std::string   getType() const;
          
     protected:
