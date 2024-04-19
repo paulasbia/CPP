@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 16:16:12 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 10:34:46 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Dog : public Animal
     Brain	            *getBrain(void) const;
 
     private:
-    Brain   *brain;
+    Brain   *_brain;
 
     };
 

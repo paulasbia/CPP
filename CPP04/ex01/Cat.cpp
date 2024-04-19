@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:05:24 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 10:36:04 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cat::Cat() : Animal("Cat")
 { 
     std::cout << MAGENTA << "Cat default constructor was called" << std::endl << END;
-    brain = new Brain();
+    _brain = new Brain();
 }
 
 Cat::Cat(const Cat& copy) : Animal(copy)
@@ -23,7 +23,7 @@ Cat::Cat(const Cat& copy) : Animal(copy)
     std::cout << MAGENTA << "Cat copy constructor called" << std::endl << END;
     if (this == &copy)
 		return ;
-    brain = new Brain(*copy.brain);
+    _brain = new Brain(*copy._brain);
 }
 
 Cat   &Cat::operator=(const Cat& copy)
@@ -33,14 +33,16 @@ Cat   &Cat::operator=(const Cat& copy)
 		return *this;
     *this = copy;
     _type = copy._type;
-    brain = copy.brain;
+    _brain = copy._brain;
+    // delete _brain;
+    // this->_brain = new Brain(*copy._brain);
     return *this;
 }
 
 Cat::~Cat()
 {
     std::cout << MAGENTA << "Cat default destructor" << std::endl << END;
-    delete brain;
+    delete _brain;
 }
 
 void        Cat::makeSound() const
@@ -50,5 +52,5 @@ void        Cat::makeSound() const
 
 Brain	*Cat::getBrain(void) const 
 {
-	return (brain);
+	return (_brain);
 }

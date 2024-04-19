@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:22:48 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 10:27:57 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int main()
     const Dog dog;
     Cat sirius(cat);
     Dog jake(dog);
-    
 
     std::cout << GREEN << "--------------------IDEAS----------------------" << std::endl << END;
     std::cout << GREEN << "--------->DEFAULT:" << std::endl << END;
