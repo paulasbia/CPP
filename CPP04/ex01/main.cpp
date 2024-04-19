@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:18:11 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 10:22:48 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #define SIZE_GROUP 5
 
 int main()
-{
+ {
     Animal* animalGroup[SIZE_GROUP];
     
     std::cout << GREEN << "----------------CONSTRUCTOR-----------------" << std::endl << END;
@@ -76,6 +76,11 @@ int main()
     
 
     std::cout << GREEN << "---------------------------------------" << std::endl << END;
+
+    delete originalCat;
+    delete originalDog;
+    delete deepcopyCat;
+    delete deepCopyDog;
     
 
     return 0;
