@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:16:52 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/19 10:18:11 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,16 +62,16 @@ int main()
     
     *deepcopyCat = *originalCat;
     
-    std::cout << "original adresss: " << std:: endl;
+    std::cout << "original addresss: " << std:: endl;
     originalCat->printAddress();
-    std::cout << "deepcopy adresss: " << std:: endl;
+    std::cout << "deepcopy addresss: " << std:: endl;
     deepcopyCat->printAddress();
 
     Animal* originalDog = new Dog();
     Animal* deepCopyDog = new Dog(*(Dog*)(originalDog));
-    std::cout << "original adresss: " << std:: endl;
+    std::cout << "original addresss: " << std:: endl;
     originalDog->printAddress();
-    std::cout << "deepcopy adresss: " << std:: endl;
+    std::cout << "deepcopy addresss: " << std:: endl;
     deepCopyDog->printAddress();
     
 
