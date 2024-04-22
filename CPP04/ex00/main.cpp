@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:17:53 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/22 10:07:51 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ int main()
     std::cout << GREEN << "----------------WRONG------------------" << std::endl << END;
     const WrongAnimal* wMeta = new WrongAnimal();
     const WrongAnimal* wCat = new WrongCat();
+    const WrongCat* lCat = new WrongCat();
     
     std::cout << wCat->getType() << " " << std::endl;
     wCat->makeSound();
     wMeta->makeSound();
+    lCat->makeSound();
     std::cout << GREEN << "--------------------------------------------" << std::endl << END;
 
     std::cout << GREEN << "----------------DEEPCOPIES------------------" << std::endl << END;
@@ -64,6 +66,7 @@ int main()
     delete jake;
     delete wCat;
     delete wMeta;
+    delete lCat;
     delete originalCat;
     delete originalDog;
     delete deepcopyCat;
