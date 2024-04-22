@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 11:27:33 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/22 10:29:59 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,23 @@ int main()
     for(int i = 0; i < 3; i++)
         std::cout << "Jake`s idea: " << ideas[i] << std::endl;
 
-    std::cout << GREEN << "----------------DEEPCOPIES------------------" << std::endl << END;
-    AAnimal* originalCat = new Cat();
-    AAnimal* deepcopyCat = new Cat();
+    std::cout << GREEN << "----------------DEEPCOPIES--BRAIN------------" << std::endl << END;
+    Cat originalCat;
+    Cat deepcopyCat;
     
-    *deepcopyCat = *originalCat;
-    
-    std::cout << "original addresss: " << std:: endl;
-    originalCat->printAddress();
-    std::cout << "deepcopy addresss: " << std:: endl;
-    deepcopyCat->printAddress();
+    deepcopyCat = originalCat;
 
+    originalCat.getBrain()->setIdeas("Let`s go to the park!");
+    std::cout << GREEN << "--------->ORIGINAL:" << std::endl << END;
+    ideas = originalCat.getBrain()->getIdeas();
+    for(int i = 0; i < 3; i++)
+        std::cout << "original`s idea: " << ideas[i] << std::endl;
+    
+    ideas = deepcopyCat.getBrain()->getIdeas();
+    for(int i = 0; i < 3; i++)
+        std::cout << "deep`s idea: " << ideas[i] << std::endl;
+
+    std::cout << GREEN << "----------------DEEPCOPIES------------------" << std::endl << END;
     AAnimal* originalDog = new Dog();
     AAnimal* deepCopyDog = new Dog(*(Dog*)(originalDog));
     std::cout << "original addresss: " << std:: endl;
@@ -76,9 +82,7 @@ int main()
 
     std::cout << GREEN << "---------------------------------------" << std::endl << END;
 
-    delete originalCat;
     delete originalDog;
-    delete deepcopyCat;
     delete deepCopyDog;
     
 
