@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 14:32:57 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/22 09:50:56 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Brain
     void                setIdeas(std::string idea);
          
     protected:
-        std::string _ideas[100];
+        std::string ideas[100];
 
     };
 

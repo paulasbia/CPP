@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 10:16:37 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/22 09:50:46 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal
 {
     public:
     Animal();
-    Animal(const std::string type);
+    Animal(const std::string t);
     Animal(const Animal& copy);
         
     Animal& operator=(const Animal& copy);
@@ -38,7 +38,7 @@ class Animal
     const std::string   getType() const;
          
     protected:
-        std::string _type;
+        std::string type;
 
     };
 

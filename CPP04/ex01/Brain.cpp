@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 16:40:34 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/22 09:51:09 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Brain::Brain(const Brain& copy)
     std::cout << "Brain copy constructor called" << std::endl << END;
     //*this = copy;
     for(int i = 0; i < 100 ; i++)
-        _ideas[i] =  copy._ideas[i];
+        ideas[i] =  copy.ideas[i];
 }
 
 Brain   &Brain::operator=(const Brain& copy)
@@ -32,7 +32,7 @@ Brain   &Brain::operator=(const Brain& copy)
     if(this == &copy)
         return *this;
     for (int i = 0; i < 100; i++)
-        this->_ideas[i] = copy._ideas[i];
+        this->ideas[i] = copy.ideas[i];
     return *this;
 }
 
@@ -43,7 +43,7 @@ Brain::~Brain()
 
 const std::string      *Brain::getIdeas() const
 {
-    return _ideas;
+    return ideas;
 }
 
 void    Brain::setIdeas(std::string idea)
@@ -51,5 +51,5 @@ void    Brain::setIdeas(std::string idea)
     if (idea.empty())
         idea = "zzzzzzz...zzzzzzz";
     for (int i = 0; i < 100; i++)
-        _ideas[i] = idea;
+        ideas[i] = idea;
 }
