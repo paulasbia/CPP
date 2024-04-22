@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:56:32 by paula             #+#    #+#             */
-/*   Updated: 2024/04/22 10:29:59 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:37:43 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 int main()
  {
-    AAnimal* animalGroup[SIZE_GROUP];
+   AAnimal* animalGroup[SIZE_GROUP];
+  // AAnimal* meta = new AAnimal();
     
     std::cout << GREEN << "----------------CONSTRUCTOR-----------------" << std::endl << END;
     for (int i = 0; i < SIZE_GROUP; i++)
