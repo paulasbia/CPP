@@ -6,7 +6,7 @@
 /*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/22 09:51:27 by pde-souz         ###   ########.fr       */
+/*   Updated: 2024/04/22 10:11:16 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ Cat   &Cat::operator=(const Cat& copy)
     if (this != &copy)
     {
         this->type = copy.type;
-        delete this->_brain;
+        if(_brain)
+            delete this->_brain;
         this->_brain = new Brain(*copy.getBrain());
     }
     return *this;
