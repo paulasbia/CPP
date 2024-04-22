@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 13:59:17 by paula             #+#    #+#             */
-/*   Updated: 2024/04/17 14:18:31 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/22 09:48:31 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class WrongAnimal
 {
     public:
     WrongAnimal();
-    WrongAnimal(const std::string type);
+    WrongAnimal(const std::string t);
     WrongAnimal(const WrongAnimal& copy);
         
     WrongAnimal& operator=(const WrongAnimal& copy);
@@ -36,7 +36,7 @@ class WrongAnimal
     const std::string   getType() const;
          
     protected:
-        std::string _type;
+        std::string type;
 
     };
 
