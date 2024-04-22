@@ -26,7 +26,7 @@ class AAnimal
 {
     public:
         AAnimal();
-        AAnimal(const std::string type);
+        AAnimal(const std::string t);
         AAnimal(const AAnimal& copy);
             
         AAnimal& operator=(const AAnimal& copy);
@@ -38,7 +38,7 @@ class AAnimal
     const std::string   getType() const;
          
     protected:
-        std::string _type;
+        std::string type;
 
     };
 

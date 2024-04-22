@@ -25,7 +25,7 @@ class WrongAnimal
 {
     public:
     WrongAnimal();
-    WrongAnimal(const std::string type);
+    WrongAnimal(const std::string t);
     WrongAnimal(const WrongAnimal& copy);
         
     WrongAnimal& operator=(const WrongAnimal& copy);
@@ -36,7 +36,7 @@ class WrongAnimal
     const std::string   getType() const;
          
     protected:
-        std::string _type;
+        std::string type;
 
     };
 

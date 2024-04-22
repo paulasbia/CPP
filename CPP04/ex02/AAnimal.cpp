@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pde-souz <pde-souz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:04:47 by paula             #+#    #+#             */
-/*   Updated: 2024/04/19 11:15:40 by paula            ###   ########.fr       */
+/*   Updated: 2024/04/22 09:53:50 by pde-souz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ AAnimal::AAnimal()
     std::cout << "AAnimal default constructor was called" << std::endl << END;
 }
 
-AAnimal::AAnimal(const std::string type)
+AAnimal::AAnimal(const std::string t)
 {
-    _type = type; 
+    type = t; 
     std::cout << "AAnimal constructor with parameter was called" << std::endl << END;
 }
 
 AAnimal::AAnimal(const AAnimal& copy)
 {
     std::cout << "AAnimal copy constructor called" << std::endl << END;
-    this->_type = copy._type;
+    this->type = copy.type;
 }
 
 AAnimal   &AAnimal::operator=(const AAnimal& copy)
@@ -34,7 +34,7 @@ AAnimal   &AAnimal::operator=(const AAnimal& copy)
     std::cout << "AAnimal copy assignment operator called" << std::endl << END;
     if(this == &copy)
         return *this;
-    this->_type = copy._type;
+    this->type = copy.type;
     return *this;
 }
 
@@ -45,7 +45,7 @@ AAnimal::~AAnimal()
 
 const std::string      AAnimal::getType() const
 {
-    return _type;
+    return type;
 }
 
 void        AAnimal::printAddress()
