@@ -6,7 +6,7 @@
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:43 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/11 14:26:25 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/12 10:03:33 by paulabiazot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,37 @@ class Bureaucrat
 {
     public:
     Bureaucrat();
-    Bureaucrat(const std::string t);
+    Bureaucrat(const std::string name, int grade);
     Bureaucrat(const Bureaucrat& copy);
         
     Bureaucrat& operator=(const Bureaucrat& copy);
-    virtual ~Bureaucrat();
+    ~Bureaucrat();
+
+    class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
         
     //Methods
-    const std::string   getType() const;
+    const std::string   &getName() const;
+    int                 getGrade() const;
+
+    //Member functions
+    void    incrementGrade();
+    void    decrementGrade();
+    	
+    
          
-    protected:
-        std::string type;
+    private:
+        const std::string		m_name;
+		int				        m_grade;	
 
 };
 
