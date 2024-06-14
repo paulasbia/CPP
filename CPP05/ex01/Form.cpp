@@ -6,7 +6,7 @@
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:46 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/14 09:49:10 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/14 14:20:44 by paulabiazot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void Form::Form::beSigned(const Bureaucrat &bureaucrat)
 	if (bureaucrat.getGrade() > m_gradeSign)
 		throw GradeTooLowException();
 	if(m_signed)
-		std::cout << BLUE << "This form is already signed\n" << END;
+		std::cout << RED << "This form is already signed\n" << END;
 	else
 		m_signed = true;
 }
