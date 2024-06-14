@@ -6,7 +6,7 @@
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:46 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/12 16:20:55 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/14 09:49:10 by paulabiazot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ std::ostream &operator<<(std::ostream &out, Form const &Form)
 	out << BLUE
 	   << "Form name: " << Form.getName() << std::endl
 	   << "Grade to sign: " << Form.getGradeToSign() << std::endl
-	   << "Grade to execute: " << Form.getGradeToExecute()
+	   << "Grade to execute: " << Form.getGradeToExecute() << std::endl
 	   << "Are signed: ";
 		if(Form.getSigned())
 			std::cout << "Yes";
