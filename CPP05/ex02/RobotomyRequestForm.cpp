@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:46 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/17 10:59:45 by paula            ###   ########.fr       */
+/*   Updated: 2024/06/17 11:37:44 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &c
 
 void	RobotomyRequestForm::executeForm() const
 {
-	if (rand() % 2)
-		std::cout << GREEN << m_target << "has been robotomized successfully" << END << std::endl;
-	else
-		std::cout << RED << "the robotomy of " << m_target << " failed LOL" << END << std::endl;
+    static int i;
+
+    if(i % 2 == 0)
+        std::cout << BLUE << m_target << " has been robotomized successfully!!" << END << std::endl;
+    else 
+        std::cout << RED  << m_target << " robotomy failed." << END << std::endl;
+    i++;
 }
