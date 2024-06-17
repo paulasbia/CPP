@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:43 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/17 10:28:05 by paula            ###   ########.fr       */
+/*   Updated: 2024/06/17 10:43:55 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ class Bureaucrat
 			public:
 				virtual const char *what() const throw();
 		};
+
+    class GradeNotSignedException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
         
     //Methods
     const std::string   &getName() const;
@@ -55,6 +61,7 @@ class Bureaucrat
     void    incrementGrade();
     void    decrementGrade();
     void    signForm(AForm &form);
+    void    executeForm(AForm const &form) const;
          
     private:
     const std::string		m_name;
