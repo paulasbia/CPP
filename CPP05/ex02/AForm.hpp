@@ -54,6 +54,9 @@ class AForm
     //Member functions
     void  beSigned(const Bureaucrat &bureaucrat);
          
+    protected:
+    std::string       m_target;
+
     private:
     const std::string		m_name;
     bool                m_signed;

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                                     :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
 # include <exception>
@@ -25,18 +25,18 @@
 
 class Form;
 
-class ShrubberyCreationForm : public AForm
+class PresidentialPardonForm : public AForm
 {
     public:
-    ShrubberyCreationForm();
-    ShrubberyCreationForm(const std::string &target);
-    ShrubberyCreationForm(const ShrubberyCreationForm& copy);
+    PresidentialPardonForm();
+    PresidentialPardonForm(const std::string &target);
+    PresidentialPardonForm(const PresidentialPardonForm& copy);
         
-    ShrubberyCreationForm& operator=(const ShrubberyCreationForm& copy);
-    ~ShrubberyCreationForm();
+    PresidentialPardonForm& operator=(const PresidentialPardonForm& copy);
+    ~PresidentialPardonForm();
      
     private:
-    void  executeForm();
+
 };
 
 #endif

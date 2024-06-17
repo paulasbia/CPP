@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                                     :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
 # include <exception>
@@ -25,18 +25,18 @@
 
 class Form;
 
-class ShrubberyCreationForm : public AForm
+class RobotomyRequestForm : public AForm
 {
     public:
-    ShrubberyCreationForm();
-    ShrubberyCreationForm(const std::string &target);
-    ShrubberyCreationForm(const ShrubberyCreationForm& copy);
+    RobotomyRequestForm();
+    RobotomyRequestForm(const std::string &target);
+    RobotomyRequestForm(const RobotomyRequestForm& copy);
         
-    ShrubberyCreationForm& operator=(const ShrubberyCreationForm& copy);
-    ~ShrubberyCreationForm();
+    RobotomyRequestForm& operator=(const RobotomyRequestForm& copy);
+    ~RobotomyRequestForm();
      
     private:
-    void  executeForm();
+
 };
 
 #endif

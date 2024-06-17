@@ -6,21 +6,25 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:46 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/17 09:34:48 by paula            ###   ########.fr       */
+/*   Updated: 2024/06/17 09:48:50 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string shrubbery) : AForm("ShrubberyCreaionForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
-	m_shrubbery = shrubbery;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137)
+{
+	m_target = target;
 }
 
 // Copy constructor
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other) : AForm(other)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other) : AForm(other.getName() + " other", 145, 137)
 {
-	m_shrubbery = other.m_shrubbery;
+	m_target = other.m_target;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() 
@@ -34,6 +38,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
     std::cout << "ShrubberyCreationForm assignation operator called" << std::endl << END;
 	if (this == &copy)
 		return (*this);
-	this->m_shrubbery = copy.m_shrubbery;
+	this->m_target = copy.m_target;
 	return (*this);
 }
