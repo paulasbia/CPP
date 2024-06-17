@@ -40,18 +40,18 @@ AForm::AForm(AForm const &other)
 	, m_gradeSign(other.m_gradeSign)
 	, m_gradeExecute(other.m_gradeExecute)
 {
-	std::cout << "AForm copy constructor was called" << std::endl << END;
+//	std::cout << "AForm copy constructor was called" << std::endl << END;
 }
 
 AForm::~AForm() 
 {
-	std::cout << "AForm destructor was called" << std::endl << END;
+//	std::cout << "AForm destructor was called" << std::endl << END;
 }
 
 // Operator overloads
 AForm &AForm::operator=(AForm const &copy)
 {
-    std::cout << "AForm assignation operator called" << std::endl << END;
+//    std::cout << "AForm assignation operator called" << std::endl << END;
 	if (this == &copy)
 		return (*this);
 	this->m_signed = copy.m_signed;

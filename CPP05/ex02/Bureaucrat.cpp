@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:46 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/17 10:46:45 by paula            ###   ########.fr       */
+/*   Updated: 2024/06/17 11:05:01 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ Bureaucrat::Bureaucrat(Bureaucrat const &other)
     : m_name(other.m_name)
     , m_grade(other.m_grade)
 {
-	std::cout << "Bureaucrat copy constructor was called" << std::endl << END;
+//	std::cout << "Bureaucrat copy constructor was called" << std::endl << END;
 }
 
 Bureaucrat::~Bureaucrat() 
 {
-	std::cout << "Bureaucrat destructor was called" << std::endl << END;
+//	std::cout << "Bureaucrat destructor was called" << std::endl << END;
 }
 // Operator overloads
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &copy)
 {
-    std::cout << "Bureaucrat assignation operator called" << std::endl << END;
+//    std::cout << "Bureaucrat assignation operator called" << std::endl << END;
 	if (this == &copy)
 		return (*this);
 	this->m_grade = copy.m_grade;
@@ -87,7 +87,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return (RED "Grade too low!\n" END);
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const throw()
+const char *Bureaucrat::GradeNotSignedException::what() const throw()
 {
 	return (RED "The Form is not signed yet!\n" END);
 }

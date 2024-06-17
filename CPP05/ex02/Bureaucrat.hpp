@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:43 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/17 10:43:55 by paula            ###   ########.fr       */
+/*   Updated: 2024/06/17 10:58:03 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 #define BLUE    "\033[34m"      
 #define MAGENTA "\033[35m"      
 
-class Form;
+class AForm;
 
 class Bureaucrat 
 {

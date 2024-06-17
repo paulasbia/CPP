@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <exception>
+# include <stdlib.h>
 # include "AForm.hpp"
 
 #define END     "\033[0m"

@@ -14,6 +14,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include <iostream>
+#include <fstream>
 # include <exception>
 # include "AForm.hpp"
 
@@ -36,7 +37,7 @@ class ShrubberyCreationForm : public AForm
     ~ShrubberyCreationForm();
      
     private:
-    void  executeForm();
+    void  executeForm() const;
 };
 
 #endif

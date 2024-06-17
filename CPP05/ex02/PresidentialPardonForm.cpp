@@ -12,17 +12,17 @@
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 72, 45)
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 72, 45)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 25, 5)
 {
 	m_target = target;
 }
 
 // Copy constructor
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &other) : AForm(other.getName() + " other", 72, 45)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &other) : AForm(other.getName() + " other", 25, 5)
 {
 	m_target = other.m_target;
 }
@@ -34,7 +34,6 @@ PresidentialPardonForm::~PresidentialPardonForm()
 // Operator overloads
 PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &copy)
 {
-    std::cout << "PresidentialPardonForm assignation operator called" << std::endl << END;
 	if (this == &copy)
 		return (*this);
 	this->m_target = copy.m_target;
@@ -43,8 +42,5 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 
 void	PresidentialPardonForm::executeForm() const
 {
-	if (rand() % 2)
-		std::cout << GREEN << m_target << "has been robotomized successfully" << END << std::endl;
-	else
-		std::cout << RED << "the robotomy of " << m_target << " failed LOL" << END << std::endl;
+	std::cout << BLUE << m_target << "has been pardoned by Zaphod Beeblebrox" << END << std::endl;
 }
