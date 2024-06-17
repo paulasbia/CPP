@@ -18,7 +18,6 @@ AForm::AForm()
     , m_gradeSign(1)
 	, m_gradeExecute(1)
 {
-	std::cout << "AForm default constructor was called" << std::endl << END;
 }
 
 AForm::AForm(const std::string name, int gradeSign, int gradeExec) 

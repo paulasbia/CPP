@@ -53,6 +53,7 @@ class AForm
 
     //Member functions
     void  beSigned(const Bureaucrat &bureaucrat);
+    void  execute(const Bureaucrat &bureaucrat) const;
          
     protected:
     std::string       m_target;
@@ -61,7 +62,8 @@ class AForm
     const std::string		m_name;
     bool                m_signed;
     const int           m_gradeSign;
-		const int				    m_gradeExecute;	
+		const int				    m_gradeExecute;
+    virtual void		    executeForm() const = 0;
 
 };
 

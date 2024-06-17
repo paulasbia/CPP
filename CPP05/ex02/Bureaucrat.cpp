@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
+/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:46 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/14 14:07:38 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/17 10:24:08 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() 
     : m_name("Default")
@@ -88,7 +87,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 	return (RED "Grade too low!\n" END);
 }
 
-void Bureaucrat::signForm(Form &form) const
+void Bureaucrat::signForm(AForm &form)
 {
 	if (form.getSigned())
 	{

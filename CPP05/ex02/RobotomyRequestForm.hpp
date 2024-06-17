@@ -36,6 +36,7 @@ class RobotomyRequestForm : public AForm
     ~RobotomyRequestForm();
      
     private:
+    void	executeForm() const;
 
 };
 

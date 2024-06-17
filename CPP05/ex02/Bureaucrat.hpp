@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
+/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:43 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/12 16:19:33 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/17 10:24:55 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <exception>
+# include "AForm.hpp"
 
 #define END     "\033[0m"
 #define RED     "\033[31m"      
@@ -53,13 +54,13 @@ class Bureaucrat
     //Member functions
     void    incrementGrade();
     void    decrementGrade();
-    void    signForm(Form &form) const;
+    void    signForm(AForm &form);
     	
     
          
     private:
-        const std::string		m_name;
-		int				        m_grade;	
+    const std::string		m_name;
+		int				          m_grade;	
 
 };
 
