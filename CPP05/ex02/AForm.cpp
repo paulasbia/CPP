@@ -78,6 +78,11 @@ int AForm::getGradeToExecute() const
 	return (m_gradeExecute);
 }
 
+std::string const &AForm::getTarget() const
+{
+	return (m_target);
+}
+
 // Member function
 void AForm::AForm::beSigned(const Bureaucrat &bureaucrat)
 {
@@ -114,4 +119,11 @@ std::ostream &operator<<(std::ostream &out, AForm const &AForm)
 		<< std::endl
 	   << END;
 	return (out);
+}
+
+void	AForm::execute(Bureaucrat const & executor) const
+{
+	if (executor.getGrade() > m_gradeExecute)
+		throw AForm::GradeTooLowException();
+	executeForm();
 }

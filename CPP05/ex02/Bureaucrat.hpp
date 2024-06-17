@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:43 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/17 10:24:55 by paula            ###   ########.fr       */
+/*   Updated: 2024/06/17 10:28:05 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ class Bureaucrat
     void    incrementGrade();
     void    decrementGrade();
     void    signForm(AForm &form);
-    	
-    
          
     private:
     const std::string		m_name;

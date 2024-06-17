@@ -50,6 +50,7 @@ class AForm
     int			            getGradeToSign() const;
 		int			            getGradeToExecute() const;
 		bool					      getSigned() const;
+    const std::string   &getTarget() const;
 
     //Member functions
     void  beSigned(const Bureaucrat &bureaucrat);
