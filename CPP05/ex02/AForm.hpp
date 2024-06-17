@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                     :+:      :+:    :+:   */
+/*   AForm.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 #include "Bureaucrat.hpp"
 
@@ -23,15 +23,15 @@
 
 class Bureaucrat;
 
-class Form 
+class AForm 
 {
     public:
-    Form ();
-    Form (const std::string name, int gradeSing, int gradeExec);
-    Form (const Form& copy);
+    AForm ();
+    AForm (const std::string name, int gradeSing, int gradeExec);
+    AForm (const AForm& copy);
         
-    Form& operator=(const Form& copy);
-    ~Form ();
+    AForm& operator=(const AForm& copy);
+    virtual ~AForm ();
 
     class GradeTooHighException : public std::exception
 		{
@@ -62,6 +62,6 @@ class Form
 
 };
 
-std::ostream	&operator<<(std::ostream &o, const Form &Form);
+std::ostream	&operator<<(std::ostream &o, const AForm &AForm);
 
 #endif
