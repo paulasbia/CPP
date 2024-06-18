@@ -54,7 +54,7 @@ class AForm
 
     //Member functions
     void  beSigned(const Bureaucrat &bureaucrat);
-    void  execute(const Bureaucrat &bureaucrat) const;
+    void  execute(const Bureaucrat &executor) const;
          
     protected:
     std::string       m_target;
