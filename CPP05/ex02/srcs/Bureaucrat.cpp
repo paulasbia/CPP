@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
+/*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:46 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/17 11:05:01 by paula            ###   ########.fr       */
+/*   Updated: 2024/06/18 09:56:28 by paulabiazot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() 
     : m_name("Default")
@@ -128,6 +128,6 @@ void	Bureaucrat::executeForm(AForm const &form) const
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << RED << "ERROR: " << form.getName() << " " << e.what() << END << std::endl;
+		std::cerr << RED << "ERROR: " << m_name << " cannot excecute " << form.getName() << " because " << e.what() << END << std::endl;
 	}
 }

@@ -1,8 +1,8 @@
 .SILENT:
 
-NAME		= 		Bureaucrat01
-SRCS		=		main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
-OBJS 		=		$(SRCS:.cpp=.o)
+NAME		= 		Bureaucrat02
+SRCS 		= 		$(wildcard srcs/*.cpp)
+OBJS 		= 		$(SRCS:srcs/%.cpp=srcs/%.o)
 CXXFLAGS	=		-Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM			=		rm -f
 
