@@ -6,7 +6,7 @@
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:46 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/18 09:56:46 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/18 13:08:02 by paulabiazot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ file << " jgs \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_  " << std::endl;
 
 if (file.is_open())
 		file.close();
+std::cout << GREEN << fileName << " was created succefully!" << END << std::endl;
 }
 
