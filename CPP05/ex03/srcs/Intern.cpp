@@ -63,29 +63,24 @@ AForm		*Intern::makeForm(const std::string &formName, const std::string &target)
 
 	std::string form_names[3] =
 	{
-		"ShrubberyCreationForm",
-		"RobotomyRequestForm",
-		"PresidentialPardonForm"
+		"ShrubberyForm",
+		"RobotomyForm",
+		"PardonForm"
 	};
-
-	int i = 0;
-    for(; i < 3; i++)
+	AForm	*(Intern::*form_funcs[3])(const std::string target) =
 	{
-        if(formName == form_names[i])
-            break;
-    }
-    switch (i)
-    {
-        case 0:
-            std::cout << "Intern creates form Shrubbery" << std::endl;
-            return (new ShrubberyCreationForm(target));
-        case 1:
-            std::cout << "Intern creates form Robotomy Request" << std::endl;
-            return (new RobotomyRequestForm(target));
-        case 2:
-            std::cout << "Intern creates form Presidential Pardon" << std::endl;
-            return (new PresidentialPardonForm(target));
-        default:
-            throw InvalidForm();
-    }
+		&Intern::createShrubbery,
+		&Intern::createRobotomy,
+		&Intern::createPardon
+	};
+	
+	for (int i = 0; i < 3; i++)
+	{
+		if (formName == form_names[i])
+		{
+			std::cout << BLUE << " The intern creates " << formName << END << std::endl;
+			return (this->*form_funcs[i])(target);
+		}
+	}
+	throw InvalidForm();
 }

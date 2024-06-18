@@ -18,6 +18,7 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PresidentialPardonForm", 25, 5)
 {
+//    std::cout << "Pardon constructor with parameter was called" << std::endl << END;
 	m_target = target;
 }
 

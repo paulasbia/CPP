@@ -6,7 +6,7 @@
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:39 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/18 11:29:31 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/18 11:57:03 by paulabiazot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 		AForm *form  = NULL;
 		try 
 		{
-			form = intern.makeForm("RobotomyRequestForm", "Test1");
+			form = intern.makeForm("RobotomyForm", "Test1");
 			delete form; 
 		} 
 		catch (const std::exception &e)
@@ -43,7 +43,7 @@ int main()
 		try 
 		{
 			Bureaucrat	B1("B1", 1);
-			form = intern.makeForm("ShrubberyCreationForm", "Test1");
+			form = intern.makeForm("ShrubberyForm", "Test1");
 			form->execute(B1);
 			delete form; 
 		} 
@@ -61,7 +61,7 @@ int main()
 		AForm *form  = NULL;
 		try 
 		{
-			form = intern.makeForm("PresidentialPardonForm", "Test1");
+			form = intern.makeForm("PardonForm", "Test1");
 			delete form; 
 		} 
 		catch (const std::exception &e)
