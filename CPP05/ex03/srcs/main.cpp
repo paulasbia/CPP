@@ -6,7 +6,7 @@
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:39 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/18 09:58:37 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/18 11:29:31 by paulabiazot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,77 +14,77 @@
 #include "../includes/PresidentialPardonForm.hpp"
 #include "../includes/RobotomyRequestForm.hpp"
 #include "../includes/ShrubberyCreationForm.hpp"
+#include "../includes/Intern.hpp"
 
 int main()
 {
 	{
-		std::cout << MAGENTA << "#####  Shrubbery test  #####" << std::endl;
-		Bureaucrat b1("B1", 130);
-		ShrubberyCreationForm form1("GardenByBlita");
-		form1.beSigned(b1);
-		b1.executeForm(form1);
-		std::cout << form1 << std::endl;
-	}
+		std::cout << MAGENTA << "\n#####  Robotomy test  #####" << std::endl;
 
-	{
-		std::cout << MAGENTA << "\n#####  Shrubbery test 2 #####" << std::endl;
-		try
+		Intern intern;
+		AForm *form  = NULL;
+		try 
 		{
-			Bureaucrat b1("B1", 150);
-			ShrubberyCreationForm form1("TryGarden");
-			form1.beSigned(b1);
-			b1.executeForm(form1);
-			std::cout << form1 << std::endl;
-		}
-		catch (const std::exception &err) { 
-			std:: cerr << RED << "ERROR: " << err.what() << END <<std::endl;
-		}
-	}
-	
-	std::cout << MAGENTA << "\n#####  Robotomy test  #####" << std::endl;
-	for(int i = 0; i < 5; i++)
-	{
-		try
-		{
-			Bureaucrat B1("B1", 1);
-			RobotomyRequestForm form("B1");
-			std::cout << form;
-			std::cout << B1;
-			B1.signForm(form);
-			form.execute(B1);
-			std:: cout << "\n\n";
+			form = intern.makeForm("RobotomyRequestForm", "Test1");
+			delete form; 
 		} 
-		catch (const std::exception &err) { 
-			std:: cerr << RED << "ERROR: " << err.what() << END <<std::endl;
+		catch (const std::exception &e)
+		{
+			delete form;
+			std::cout << RED << "ERROR: " << e.what() << "\n" << END;
 		}
 	}
 
-	std::cout << MAGENTA << "\n#####  Presidential test  #####" << std::endl;
 	{
-		Bureaucrat B1("B1", 10);
-		Bureaucrat B2("B2", 1);
-		PresidentialPardonForm form1("Blita");
-		PresidentialPardonForm form2("Paula");
-		try
+		std::cout << MAGENTA << "\n#####  Shrubbery test  #####" << std::endl;
+
+		Intern intern;
+		AForm *form  = NULL;
+		try 
 		{
-			form1.beSigned(B1);
-			B1.executeForm(form1);
-			form2.beSigned(B2);
-			B2.executeForm(form2);
-		}
-		catch (const std::exception &err)
+			Bureaucrat	B1("B1", 1);
+			form = intern.makeForm("ShrubberyCreationForm", "Test1");
+			form->execute(B1);
+			delete form; 
+		} 
+		catch (const std::exception &e)
 		{
-			std:: cerr << RED << "ERROR: " << err.what() << END <<std::endl;
+			delete form;
+			std::cout << RED << "ERROR: " << e.what() << "\n" << END;
 		}
 	}
 
-	std::cout << MAGENTA << "\n#####  Too Higth Form test  #####" << std::endl;
-	{
-		Bureaucrat B1("B1", 50);
-		RobotomyRequestForm form1("test form");
-		form1.beSigned(B1);
-		B1.executeForm(form1);
-		std::cout << form1 << std::endl;
-		Bureaucrat B2("B2", 1);
-	}
+    {
+		std::cout << MAGENTA << "\n#####  Pardon test  #####" << std::endl;
+
+		Intern intern;
+		AForm *form  = NULL;
+		try 
+		{
+			form = intern.makeForm("PresidentialPardonForm", "Test1");
+			delete form; 
+		} 
+		catch (const std::exception &e)
+		{
+			delete form;
+			std::cout << RED << "ERROR: " << e.what() << "\n" << END;
+		}
+    }
+
+    {
+		std::cout << MAGENTA << "\n#####  Unknow test  #####" << std::endl;
+
+		Intern intern;
+		AForm *form  = NULL;
+		try 
+		{
+			form = intern.makeForm("Unknow", "Test1");
+			delete form; 
+		} 
+		catch (const std::exception &e)
+		{
+			delete form;
+			std::cout << RED << "ERROR: " << e.what() << "\n" << END;
+		}
+    }
 }
