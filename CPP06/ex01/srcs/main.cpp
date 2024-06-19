@@ -6,7 +6,7 @@
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:39 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/19 11:24:55 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/19 11:37:35 by paulabiazot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main()
 	data.data_value = 42;
 
 	serializer = Serializer::serialize(&data);
+	std::cout << "Serialized: " << serializer << std::endl;
 	deserializer = Serializer::deserialize(serializer);
 	
 	std::cout << MAGENTA << "The data information: \n" ;
