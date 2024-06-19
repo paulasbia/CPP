@@ -6,7 +6,7 @@
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:43 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/19 12:56:57 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/19 14:31:31 by paulabiazot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Base
 };
 
 Base    *generate(void);
-//void    identify(Base* p);
-//void    identify(Base& p);
+void    identify(Base *p);
+void    identify(Base& p);
 
 #endif

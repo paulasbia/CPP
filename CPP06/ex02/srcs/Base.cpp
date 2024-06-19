@@ -20,6 +20,7 @@ Base::~Base()
 //	std::cout << "Base destructor was called" << std::endl << END;
 }
 
+// randon every call
 static void initializeRandom() 
 {
     static bool initRand = false;
@@ -39,18 +40,54 @@ Base    *generate(void)
 	switch (randomNbr)
 	{
 		case 0:
-			std::cout << "generate A\n";
+		//	std::cout << "generate A\n";
 			return new A();
 		case 1:
-			std::cout << "generate B\n";
+		//	std::cout << "generate B\n";
 			return new B();
 		case 2:
-			std::cout << "generate C\n";
+		//	std::cout << "generate C\n";
 			return new C();	
 		default:
 			return NULL;
 	}
 }
 
+void    identify(Base *p)
+{
+	if (dynamic_cast<A*>(p))
+		std::cout << "Ptr type A\n";
+	else if (dynamic_cast<B*>(p))
+		std::cout << "Ptr type B\n";
+	else if (dynamic_cast<C*>(p))
+		std::cout << "Ptr type C\n";
+	else
+		std::cout << RED << "Ptr wrong" << std::endl << END;
+}
 
+void    identify(Base& p)
+{
+	try
+		{
+			(void)dynamic_cast<A&>(p);
+			std::cout << "Ref type A\n";
+			return ;
+		}
+	catch(const std::exception& e){}
+	try
+	{
+		(void)dynamic_cast<B&>(p);
+		std::cout << "Ref type B\n"; 
+		return ;
+	}
+	catch(const std::exception& e){}
+	try
+	{
+		(void)dynamic_cast<C&>(p);
+		std::cout << "Ref type C\n"; 
+		return ;
+	}
+	catch(const std::exception& e){}
+	std::cerr << RED << "Ref wrong!" << std::endl << END;
+}
 
