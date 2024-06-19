@@ -1,7 +1,7 @@
 .SILENT:
 
-NAME		= 		Bureaucrat
-SRCS		=		main.cpp Bureaucrat.cpp
+NAME		= 		ScalarConverter
+SRCS		=		main.cpp ScalarConverter.cpp
 OBJS 		=		$(SRCS:.cpp=.o)
 CXXFLAGS	=		-Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM			=		rm -f
