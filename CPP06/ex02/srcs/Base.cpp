@@ -20,16 +20,20 @@ Base::~Base()
 //	std::cout << "Base destructor was called" << std::endl << END;
 }
 
+static void initializeRandom() 
+{
+    static bool initRand = false;
+
+    if (!initRand) 
+	{
+        std::srand(static_cast<unsigned int>(std::time(NULL)));
+        initRand = true;
+    }
+}
+
 Base    *generate(void)
 {
-	bool sRand = false; 
-	
-    if (!sRand)
-	{
-		srand((unsigned int)time(NULL));
-        sRand = true;
-    }
-
+	initializeRandom();
 	int randomNbr = rand() % 3;
 
 	switch (randomNbr)
