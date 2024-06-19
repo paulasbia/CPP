@@ -22,14 +22,14 @@ Base::~Base()
 
 Base    *generate(void)
 {
-	static bool sRand = false; 
+	bool sRand = false; 
 	
     if (!sRand)
 	{
 		srand((unsigned int)time(NULL));
         sRand = true;
     }
-	
+
 	int randomNbr = rand() % 3;
 
 	switch (randomNbr)
