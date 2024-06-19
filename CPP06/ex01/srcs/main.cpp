@@ -6,7 +6,7 @@
 /*   By: paulabiazotto <paulabiazotto@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:39 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/19 11:49:40 by paulabiazot      ###   ########.fr       */
+/*   Updated: 2024/06/19 12:57:53 by paulabiazot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,16 @@ int main()
 	std::cout << "str_data: " << data.data_name << std::endl;
 	std::cout << "int_data: " << data.data_value << std::endl << END;
 
-	if (deserializer == &data) {
+	if (deserializer == &data) 
+	{
 		std::cout << GREEN << "\nSuccess!" << std::endl;
 		std::cout << "\nValues:" << std::endl;
 		std::cout << "ptr: " << deserializer << std::endl;
 		std::cout << "str: " << deserializer->data_name << std::endl;
 		std::cout << "int: " << deserializer->data_value << std::endl;
 
-	} else {
+	} 
+	else 
 		std::cout << RED << "Failed!" << std::endl << END;
-	}
-
 	return 0;
 }
-
