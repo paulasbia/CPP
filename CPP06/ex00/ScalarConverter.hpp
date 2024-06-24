@@ -25,23 +25,14 @@
 class ScalarConverter 
 {
     public:
+    static void 		convert(const std::string &str);
+    
+    private:
     ScalarConverter();
-    ScalarConverter(const std::string name, int grade);
     ScalarConverter(const ScalarConverter& copy);
         
     ScalarConverter& operator=(const ScalarConverter& copy);
     ~ScalarConverter();
-
-        
-    //Methods
-
-
-    //Member functions
-    
-       
-    private:
-
-
 };
 
 std::ostream	&operator<<(std::ostream &o, const ScalarConverter &ScalarConverter);

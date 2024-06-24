@@ -17,15 +17,10 @@ ScalarConverter::ScalarConverter()
 	//std::cout << "ScalarConverter default constructor was called" << std::endl << END;
 }
 
-ScalarConverter::ScalarConverter(const std::string name, int grade) 
-{
-
-	return ;
-}
-
 // Copy constructor
 ScalarConverter::ScalarConverter(ScalarConverter const &other) 
 {
+	(void)other;
 	//std::cout << "ScalarConverter copy constructor was called" << std::endl << END;
 }
 
@@ -40,13 +35,24 @@ ScalarConverter &ScalarConverter::operator=(ScalarConverter const &copy)
 //    std::cout << "ScalarConverter assignation operator called" << std::endl << END;
 	if (this == &copy)
 		return (*this);
-	//this->m_grade = copy.m_grade;
 	return (*this);
 }
 
-std::ostream &operator<<(std::ostream &out, ScalarConverter const &ScalarConverter)
+static void	print_error()
 {
-//	out << GREEN << "I am " << ScalarConverter.getName() << ", my ScalarConvertergrade is "
-//		<< ScalarConverter.getGrade() << std::endl << END;
-	return (out);
+	std::cout << "char: "	<< RED << "impossible" << END << std::endl;
+	std::cout << "int:" 	<< RED << "impossible" << END << std::endl;
+	std::cout << "float:" 	<< RED << "impossible" << END << std::endl;
+	std::cout << "double:" 	<< RED << "impossible" << END << std::endl;
 }
+
+
+void 	ScalarConverter::convert(const std::string &str)
+{
+	if (str.empty())
+	{
+		std::cout << RED << "String is empty" << END << std::endl;
+		print_error();
+	}
+}
+
