@@ -54,6 +54,7 @@ bool ScalarConverter::isChar(const std::string &str)
 
 bool ScalarConverter::isInt(const std::string &str)
 {
+	std::cout <<"verifica int\n";
     char *end;
     long value = strtol(str.c_str(), &end, 10);
     return *end == '\0' && value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max();
@@ -131,12 +132,20 @@ void 	ScalarConverter::convert(const std::string &str)
 	if (isChar(first))
         type = TYPE_CHAR;
     else if (isInt(first))
+	{
+		std::cout << " eh int\n";
         type = TYPE_INT;
+	}
     else if (isFloat(first))
+	{
+		std::cout << "float\n";
         type = TYPE_FLOAT;
+	}
     else if (isDouble(first))
-        type = TYPE_DOUBLE;
-
+	{
+		std::cout << "double\n";
+        type = TYPE_DOUBLE;		
+	}
     if (type == TYPE_ERROR)
     {
         std::cerr << "Error: invalid input!" << std::endl;
@@ -152,37 +161,37 @@ void 	ScalarConverter::convert(const std::string &str)
             char value = first[0];
             std::cout << "char: " << (isprint(value) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
             std::cout << "int: " << static_cast<int>(value) << std::endl;
-            std::cout << "float: " << static_cast<float>(value) << ".0f" << std::endl;
-            std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
+            std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
+            std::cout << "double: "<< std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
 			std::cout << "\n";
             break;
         }
     case TYPE_INT:
         {
             int value = std::atoi(first.c_str());
-            std::cout << "char: " << (isprint(value) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
+        	std::cout << "char: " << (value < 256 && value >= 0 && isprint(value) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
             std::cout << "int: " << value << std::endl;
-            std::cout << "float: " << static_cast<float>(value) << ".0f" << std::endl;
-            std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
+            std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
+            std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
 			std::cout << "\n";
             break;
         }
     case TYPE_FLOAT:
         {
             float value = static_cast<float>(std::atof(first.c_str()));
-            std::cout << "char: " << (isprint(static_cast<int>(value)) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
+            std::cout << "char: " << (value < 256 && value >= 0 && isprint(static_cast<int>(value)) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
             std::cout << "int: " << static_cast<int>(value) << std::endl;
-            std::cout << "float: " << value <<  ".0f" << std::endl;
-            std::cout << "double: " <<  static_cast<double>(value) << ".0" << std::endl;
+            std::cout << "float: " << std::fixed << std::setprecision(1) << value <<  "f" << std::endl;
+            std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
 			std::cout << "\n";
             break;
         }
     case TYPE_DOUBLE:
         {
             double value = std::atof(first.c_str());
-            std::cout << "char: " << (isprint(static_cast<int>(value)) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
+            std::cout << "char: " << (value < 256 && value >= 0 && isprint(static_cast<int>(value)) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
             std::cout << "int: " << static_cast<int>(value) << std::endl;
-            std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
+            std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
             std::cout << "double: " << value << std::endl;
 			std::cout << "\n";
             break;

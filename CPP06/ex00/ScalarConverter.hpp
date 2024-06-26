@@ -20,6 +20,7 @@
 #include <limits>
 #include <cstdlib>
 #include <cmath>
+#include <cerrno>
 
 #define END     "\033[0m"
 #define RED     "\033[31m"      

@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:39 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/26 17:13:15 by paula            ###   ########.fr       */
+/*   Updated: 2024/06/26 17:46:06 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,18 @@ int main()
 		ScalarConverter::convert("!");
 		std::cout << RED << "Non-displayable Chars:" << END << std::endl;
 		ScalarConverter::convert(std::string(1, char(-42)));
-		ScalarConverter::convert("500");
+		 ScalarConverter::convert("500");
+
+		std::cout << MAGENTA << "##### Valid Ints #####" << END << std::endl;
+		ScalarConverter::convert("-42");
+		ScalarConverter::convert("+42");
+		ScalarConverter::convert("2147483647");
+		 ScalarConverter::convert("-2147483648");
+		std::cout << RED << " Invalid Ints:" << END << std::endl;
+		ScalarConverter::convert("2147483648");
+		ScalarConverter::convert("-2147483649");
+		ScalarConverter::convert("--42");
+
 	}
 
 
