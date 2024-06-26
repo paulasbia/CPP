@@ -44,6 +44,7 @@ static void	print_error()
 	std::cout << "int:" 	<< RED << "impossible" << END << std::endl;
 	std::cout << "float:" 	<< RED << "impossible" << END << std::endl;
 	std::cout << "double:" 	<< RED << "impossible" << END << std::endl;
+	std::cout << "\n";
 }
 
 bool ScalarConverter::isChar(const std::string &str)
@@ -72,6 +73,35 @@ bool ScalarConverter::isDouble(const std::string &str)
     return *end == '\0';
 }
 
+static bool	checkPseudoLiterals(std::string &str)
+{
+	if(str == "-inf" || str ==  "-inff") {
+        std::cout <<"char: " << "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "double: "  << "-inf"<< std::endl;
+        std::cout << "float: " <<  "-inf" << "f" << std::endl;
+		std::cout << "\n";
+        return true;
+    }
+    else if(str == "+inff" || str == "+inf"){
+         std::cout <<"char: " << "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "double: "  << "+inf"<< std::endl;
+        std::cout << "float: " <<  "+inf" << "f" << std::endl;
+		std::cout << "\n";
+        return true;
+    }
+    else if(str == "nan" || str == "nanf"){
+         std::cout <<"char: " << "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "double: "  << "nan"<< std::endl;
+        std::cout << "float: " <<  "nan" << "f" << std::endl;
+		std::cout << "\n";
+        return true;
+    }
+    return false;
+}
+
 void 	ScalarConverter::convert(const std::string &str)
 {
 	int	type;
@@ -96,6 +126,8 @@ void 	ScalarConverter::convert(const std::string &str)
         print_error();
         return;
 	}
+	if(checkPseudoLiterals(first))
+		return;
 	if (isChar(first))
         type = TYPE_CHAR;
     else if (isInt(first))
@@ -122,6 +154,7 @@ void 	ScalarConverter::convert(const std::string &str)
             std::cout << "int: " << static_cast<int>(value) << std::endl;
             std::cout << "float: " << static_cast<float>(value) << ".0f" << std::endl;
             std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
+			std::cout << "\n";
             break;
         }
     case TYPE_INT:
@@ -131,6 +164,7 @@ void 	ScalarConverter::convert(const std::string &str)
             std::cout << "int: " << value << std::endl;
             std::cout << "float: " << static_cast<float>(value) << ".0f" << std::endl;
             std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
+			std::cout << "\n";
             break;
         }
     case TYPE_FLOAT:
@@ -138,8 +172,9 @@ void 	ScalarConverter::convert(const std::string &str)
             float value = static_cast<float>(std::atof(first.c_str()));
             std::cout << "char: " << (isprint(static_cast<int>(value)) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
             std::cout << "int: " << static_cast<int>(value) << std::endl;
-            std::cout << "float: " << value << "f" << std::endl;
-            std::cout << "double: " << static_cast<double>(value) << std::endl;
+            std::cout << "float: " << value <<  ".0f" << std::endl;
+            std::cout << "double: " <<  static_cast<double>(value) << ".0" << std::endl;
+			std::cout << "\n";
             break;
         }
     case TYPE_DOUBLE:
@@ -149,6 +184,7 @@ void 	ScalarConverter::convert(const std::string &str)
             std::cout << "int: " << static_cast<int>(value) << std::endl;
             std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
             std::cout << "double: " << value << std::endl;
+			std::cout << "\n";
             break;
         }
     }
