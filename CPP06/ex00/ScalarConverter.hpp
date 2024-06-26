@@ -13,14 +13,29 @@
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 
-# include <iostream>
-# include <exception>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <iomanip>
+#include <limits>
+#include <cstdlib>
+#include <cmath>
 
 #define END     "\033[0m"
 #define RED     "\033[31m"      
 #define GREEN   "\033[32m"      
 #define BLUE    "\033[34m"      
 #define MAGENTA "\033[35m"      
+
+
+enum ScalarType
+{
+    TYPE_CHAR,      //0
+    TYPE_INT,       //1
+    TYPE_FLOAT,     //2
+    TYPE_DOUBLE,    //3
+    TYPE_ERROR      //4
+};
 
 class ScalarConverter 
 {
@@ -33,6 +48,11 @@ class ScalarConverter
         
     ScalarConverter& operator=(const ScalarConverter& copy);
     ~ScalarConverter();
+
+    static bool isChar(const std::string &str);
+    static bool isInt(const std::string &str);
+    static bool isFloat(const std::string &str);
+    static bool isDouble(const std::string &str);
 };
 
 std::ostream	&operator<<(std::ostream &o, const ScalarConverter &ScalarConverter);
