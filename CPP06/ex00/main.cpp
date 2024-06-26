@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:39 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/26 16:50:14 by paula            ###   ########.fr       */
+/*   Updated: 2024/06/26 17:13:15 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main()
 		ScalarConverter::convert("!");
 		std::cout << RED << "Non-displayable Chars:" << END << std::endl;
 		ScalarConverter::convert(std::string(1, char(-42)));
-		ScalarConverter::convert("300");
+		ScalarConverter::convert("500");
 	}
 
 

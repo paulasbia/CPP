@@ -49,7 +49,7 @@ static void	print_error()
 
 bool ScalarConverter::isChar(const std::string &str)
 {
-    return str.length() == 1 && isprint(str[0]) && !isdigit(str[0]);
+    return str.length() == 1 && !isdigit(str[0]);
 }
 
 bool ScalarConverter::isInt(const std::string &str)
@@ -150,7 +150,7 @@ void 	ScalarConverter::convert(const std::string &str)
     case TYPE_CHAR:
         {
             char value = first[0];
-            std::cout << "char: '" << value << "'" << std::endl;
+            std::cout << "char: " << (isprint(value) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
             std::cout << "int: " << static_cast<int>(value) << std::endl;
             std::cout << "float: " << static_cast<float>(value) << ".0f" << std::endl;
             std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
