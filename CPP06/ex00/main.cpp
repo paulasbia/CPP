@@ -6,7 +6,7 @@
 /*   By: paula <paula@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 14:19:39 by paulabiazot       #+#    #+#             */
-/*   Updated: 2024/06/27 14:23:14 by paula            ###   ########.fr       */
+/*   Updated: 2024/06/27 15:02:52 by paula            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,19 @@ int main()
 		// ScalarConverter::convert("-2147483649");
 		// ScalarConverter::convert("--42");
 
-		
+		std::cout << MAGENTA << "##### Valid Floats #####" << END << std::endl;
+		ScalarConverter::convert("1f");
+		ScalarConverter::convert("+1f");
+		ScalarConverter::convert("+1.1f");
+		ScalarConverter::convert("-1.1f");
+		ScalarConverter::convert("424242.424242");
+		std::cout << RED << " Invalid Floats:" << END << std::endl;
+		ScalarConverter::convert("++1f");
+		ScalarConverter::convert("+f");
+		ScalarConverter::convert("340282346638528859811704183484516925440.0f");
+		ScalarConverter::convert("34028234663852885981170418348451692544111.0f");
 
+		
 	}
 
 

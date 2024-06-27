@@ -117,6 +117,34 @@ static void	printInt(double value)
 		std::cout << RED << "impossible" << END << std::endl;
 }
 
+static void printFloat(float value)
+{
+	std::cout << "float:\t";
+	if (std::isinf(value))
+	{
+		if (value > 0)
+			std::cout << std::fixed << "+inff" << std::endl;
+		else if (value < 0)
+			std::cout << std::fixed << "-inff" << std::endl;
+	}
+	else
+		std::cout << std::fixed << std::setprecision(1) << value << "f" << std::endl;
+}
+
+static void printDouble(double value)
+{
+	std::cout << "double:\t";
+	if (std::isinf(value))
+	{
+		if (value > 0)
+			std::cout << std::fixed << "+inf" << std::endl;
+		else if (value < 0)
+			std::cout << std::fixed << "-inf" << std::endl;
+	}
+	else
+		std::cout << std::fixed << std::setprecision(1) << value << std::endl;
+}
+
 
 void 	ScalarConverter::convert(const std::string &str)
 {
@@ -184,20 +212,20 @@ void 	ScalarConverter::convert(const std::string &str)
     case TYPE_INT:
         {
             int value = std::atoi(first.c_str());
-        	printchar(value);
+        	printchar(static_cast<double>(value));
 			printInt(static_cast<double>(value));
-            std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
-            std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
+			printFloat(static_cast<float>(value));
+			printDouble(static_cast<double>(value));
 			std::cout << "\n";
             break;
         }
     case TYPE_FLOAT:
         {
-            float value = static_cast<float>(std::atof(first.c_str()));
-            printchar(value);
+            float value = (std::atof(first.c_str()));
+            printchar(static_cast<double>(value));
 			printInt(static_cast<double>(value));
-            std::cout << "float: " << std::fixed << std::setprecision(1) << value <<  "f" << std::endl;
-            std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
+			printFloat(value);
+			printDouble(static_cast<double>(value));
 			std::cout << "\n";
             break;
         }
@@ -206,8 +234,8 @@ void 	ScalarConverter::convert(const std::string &str)
             double value = std::atof(first.c_str());
             printchar(value);
 			printInt(static_cast<double>(value));
-            std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
-            std::cout << "double: " << value << std::endl;
+			printFloat(static_cast<float>(value));
+			printDouble((value));
 			std::cout << "\n";
             break;
         }
