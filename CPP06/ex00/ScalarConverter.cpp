@@ -103,6 +103,21 @@ static bool	checkPseudoLiterals(std::string &str)
     return false;
 }
 
+static void	printchar(double value)
+{
+	std::cout << "char: " << (value < 256 && value >= 0 && isprint(value) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
+}
+
+static void	printInt(double value)
+{
+	std::cout << "int: ";
+	if (value <= std::numeric_limits<int>::max() && value >= std::numeric_limits<int>::min())
+		std::cout << static_cast<int>(value) << std::endl;
+	else
+		std::cout << RED << "impossible" << END << std::endl;
+}
+
+
 void 	ScalarConverter::convert(const std::string &str)
 {
 	int	type;
@@ -159,8 +174,8 @@ void 	ScalarConverter::convert(const std::string &str)
     case TYPE_CHAR:
         {
             char value = first[0];
-            std::cout << "char: " << (isprint(value) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
-            std::cout << "int: " << static_cast<int>(value) << std::endl;
+            printchar(static_cast<double>(value));
+			printInt(static_cast<double>(value));
             std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
             std::cout << "double: "<< std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
 			std::cout << "\n";
@@ -169,8 +184,8 @@ void 	ScalarConverter::convert(const std::string &str)
     case TYPE_INT:
         {
             int value = std::atoi(first.c_str());
-        	std::cout << "char: " << (value < 256 && value >= 0 && isprint(value) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
-            std::cout << "int: " << value << std::endl;
+        	printchar(value);
+			printInt(static_cast<double>(value));
             std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
             std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
 			std::cout << "\n";
@@ -179,8 +194,8 @@ void 	ScalarConverter::convert(const std::string &str)
     case TYPE_FLOAT:
         {
             float value = static_cast<float>(std::atof(first.c_str()));
-            std::cout << "char: " << (value < 256 && value >= 0 && isprint(static_cast<int>(value)) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
-            std::cout << "int: " << static_cast<int>(value) << std::endl;
+            printchar(value);
+			printInt(static_cast<double>(value));
             std::cout << "float: " << std::fixed << std::setprecision(1) << value <<  "f" << std::endl;
             std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
 			std::cout << "\n";
@@ -189,8 +204,8 @@ void 	ScalarConverter::convert(const std::string &str)
     case TYPE_DOUBLE:
         {
             double value = std::atof(first.c_str());
-            std::cout << "char: " << (value < 256 && value >= 0 && isprint(static_cast<int>(value)) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
-            std::cout << "int: " << static_cast<int>(value) << std::endl;
+            printchar(value);
+			printInt(static_cast<double>(value));
             std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
             std::cout << "double: " << value << std::endl;
 			std::cout << "\n";
