@@ -40,10 +40,10 @@ ScalarConverter &ScalarConverter::operator=(ScalarConverter const &copy)
 
 static void	print_error()
 {
-	std::cout << "char: "	<< RED << "impossible" << END << std::endl;
-	std::cout << "int:" 	<< RED << "impossible" << END << std::endl;
-	std::cout << "float:" 	<< RED << "impossible" << END << std::endl;
-	std::cout << "double:" 	<< RED << "impossible" << END << std::endl;
+	std::cout << "char:\t"	<< RED << "impossible" << END << std::endl;
+	std::cout << "int:\t" 	<< RED << "impossible" << END << std::endl;
+	std::cout << "float:\t" 	<< RED << "impossible" << END << std::endl;
+	std::cout << "double:\t" 	<< RED << "impossible" << END << std::endl;
 	std::cout << "\n";
 }
 
@@ -54,7 +54,6 @@ bool ScalarConverter::isChar(const std::string &str)
 
 bool ScalarConverter::isInt(const std::string &str)
 {
-	std::cout <<"verifica int\n";
     char *end;
     long value = strtol(str.c_str(), &end, 10);
     return *end == '\0' && value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max();
@@ -77,40 +76,40 @@ bool ScalarConverter::isDouble(const std::string &str)
 static bool	checkPseudoLiterals(std::string &str)
 {
 	if(str == "-inf" || str ==  "-inff") {
-        std::cout <<"char: " << "impossible" << std::endl;
-        std::cout << "int: " << "impossible" << std::endl;
-        std::cout << "double: "  << "-inf"<< std::endl;
-        std::cout << "float: " <<  "-inf" << "f" << std::endl;
+        std::cout <<"char:\t" << "impossible" << std::endl;
+        std::cout << "int:\t" << "impossible" << std::endl;
+        std::cout << "double:\t"  << "-inf"<< std::endl;
+        std::cout << "float:\t" <<  "-inf" << "f" << std::endl;
 		std::cout << "\n";
         return true;
     }
     else if(str == "+inff" || str == "+inf"){
-         std::cout <<"char: " << "impossible" << std::endl;
-        std::cout << "int: " << "impossible" << std::endl;
-        std::cout << "double: "  << "+inf"<< std::endl;
-        std::cout << "float: " <<  "+inf" << "f" << std::endl;
+         std::cout <<"char:\t" << "impossible" << std::endl;
+        std::cout << "int:\t" << "impossible" << std::endl;
+        std::cout << "double:\t"  << "+inf"<< std::endl;
+        std::cout << "float:\t" <<  "+inf" << "f" << std::endl;
 		std::cout << "\n";
         return true;
     }
     else if(str == "nan" || str == "nanf"){
-         std::cout <<"char: " << "impossible" << std::endl;
-        std::cout << "int: " << "impossible" << std::endl;
-        std::cout << "double: "  << "nan"<< std::endl;
-        std::cout << "float: " <<  "nan" << "f" << std::endl;
+         std::cout <<"char:\t" << "impossible" << std::endl;
+        std::cout << "int:\t" << "impossible" << std::endl;
+        std::cout << "double:\t"  << "nan"<< std::endl;
+        std::cout << "float:\t" <<  "nan" << "f" << std::endl;
 		std::cout << "\n";
         return true;
     }
     return false;
 }
 
-static void	printchar(double value)
+static void	printChar(double value)
 {
-	std::cout << "char: " << (value < 256 && value >= 0 && isprint(value) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
+	std::cout << "char:\t" << (value < 256 && value >= 0 && isprint(value) ? "'" + std::string(1, static_cast<char>(value)) + "'" : "Non displayable") << std::endl;
 }
 
 static void	printInt(double value)
 {
-	std::cout << "int: ";
+	std::cout << "int:\t";
 	if (value <= std::numeric_limits<int>::max() && value >= std::numeric_limits<int>::min())
 		std::cout << static_cast<int>(value) << std::endl;
 	else
@@ -176,7 +175,7 @@ void 	ScalarConverter::convert(const std::string &str)
         type = TYPE_CHAR;
     else if (isInt(first))
 	{
-		std::cout << " eh int\n";
+		std::cout << " int\n";
         type = TYPE_INT;
 	}
     else if (isFloat(first))
@@ -202,17 +201,17 @@ void 	ScalarConverter::convert(const std::string &str)
     case TYPE_CHAR:
         {
             char value = first[0];
-            printchar(static_cast<double>(value));
+            printChar(static_cast<double>(value));
 			printInt(static_cast<double>(value));
-            std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
-            std::cout << "double: "<< std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
+			printFloat(static_cast<float>(value));
+			printDouble(static_cast<double>(value));
 			std::cout << "\n";
             break;
         }
     case TYPE_INT:
         {
             int value = std::atoi(first.c_str());
-        	printchar(static_cast<double>(value));
+        	printChar(static_cast<double>(value));
 			printInt(static_cast<double>(value));
 			printFloat(static_cast<float>(value));
 			printDouble(static_cast<double>(value));
@@ -222,7 +221,7 @@ void 	ScalarConverter::convert(const std::string &str)
     case TYPE_FLOAT:
         {
             float value = (std::atof(first.c_str()));
-            printchar(static_cast<double>(value));
+            printChar(static_cast<double>(value));
 			printInt(static_cast<double>(value));
 			printFloat(value);
 			printDouble(static_cast<double>(value));
@@ -232,7 +231,7 @@ void 	ScalarConverter::convert(const std::string &str)
     case TYPE_DOUBLE:
         {
             double value = std::atof(first.c_str());
-            printchar(value);
+            printChar(value);
 			printInt(static_cast<double>(value));
 			printFloat(static_cast<float>(value));
 			printDouble((value));
