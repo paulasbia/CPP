@@ -27,7 +27,7 @@ static void initializeRandom()
 
     if (!initRand) 
 	{
-        std::srand((unsigned int)(std::time(NULL)));
+        srand((unsigned int)(std::time(NULL)));
         initRand = true;
     }
 }
