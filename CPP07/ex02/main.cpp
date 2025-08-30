@@ -1,4 +1,5 @@
 #include "Array.hpp"
+#include <cstddef> 
 
 int main(){
     Array<std::string>  def1;
@@ -26,5 +27,24 @@ int main(){
     {
         std::cerr << e.what() << std::endl;
     }
+
+    try {
+        for (std::size_t i = 0; i < param.size(); i++)
+        {
+            param[i] = i;
+        }
+
+        for (std::size_t i = 0; i < param.size(); i++)
+        {
+            std::cout << param[i] << std::endl;
+        }
+
+        //simulate error
+        param[22] = 10;
+	} catch (std::out_of_range& e) {
+		std::cout << "Exception: " << e.what() << std::endl;
+	}
+
+    return 0;
     
 }
