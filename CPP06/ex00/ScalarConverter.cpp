@@ -144,6 +144,13 @@ static void printDouble(double value)
 		std::cout << std::fixed << std::setprecision(1) << value << std::endl;
 }
 
+std::string trim(const std::string &s) {
+    size_t start = s.find_first_not_of(" \t\n\r\f\v");
+    if (start == std::string::npos)
+        return "";
+    size_t end = s.find_last_not_of(" \t\n\r\f\v");
+    return s.substr(start, end - start + 1);
+}
 
 void 	ScalarConverter::convert(const std::string &str)
 {
@@ -151,12 +158,14 @@ void 	ScalarConverter::convert(const std::string &str)
 
 	type = TYPE_ERROR;
 
-	if (str.empty())
+	std::string input = trim(str);
+	if (input.empty()) 
 	{
-		std::cout << RED << "String is empty" << END << std::endl;
+		std::cout << RED << "String is empty or only spaces" << END << std::endl;
 		print_error();
 		return;
 	}
+
 	std::stringstream ss(str);
 	std::string	first;
 	std::string	check;

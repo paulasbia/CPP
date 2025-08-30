@@ -21,6 +21,9 @@
 #include <cstdlib>
 #include <cmath>
 #include <cerrno>
+#include <algorithm>
+#include <cctype>
+
 
 #define END     "\033[0m"
 #define RED     "\033[31m"      

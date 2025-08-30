@@ -16,6 +16,7 @@ int main()
 {
 	{	
 		std::cout << MAGENTA << "#####  Starting test  #####" << std::endl;
+		ScalarConverter::convert(" ");
 		ScalarConverter::convert("");
 		ScalarConverter::convert("0");
 		ScalarConverter::convert("nan");
