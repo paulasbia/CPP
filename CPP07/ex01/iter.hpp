@@ -3,12 +3,12 @@
 
 #include <iostream>
 
-template<typename T> void iter(T *array, int length, void(*f)(T&))
+template<typename T, typename F> void iter(T *array, int length, F func)
 {
-    if (!array || !f)
+    if (!array || !func)
         return;
     for(int i = 0; i < length; i++)
-        f(array[i]);
+        func(array[i]);
 }
 
 #endif

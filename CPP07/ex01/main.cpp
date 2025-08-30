@@ -5,6 +5,11 @@ void    addName(std::string &s)
     s += "keep working";
 }
 
+void printString(const std::string& s)
+{
+    std::cout << s << " ";
+}
+
 void addNumber(int &n)
 {
     n += 42;
@@ -30,5 +35,8 @@ int main()
     for(int i = 0; i < 5; i++)
         std::cout << numbers[i] << std::endl;
 
+    std::cout << "\nTest 03 - const function:\n";
+    ::iter(str, 1, printString);
+    std::cout << std::endl;
 }
 
